@@ -2,7 +2,7 @@ import 'package:coursaty/Core/Constants/constants.dart';
 import 'package:coursaty/Core/Shared_Widgets/app_bar_custom.dart';
 import 'package:coursaty/Core/Themes/assets_manager.dart';
 import 'package:coursaty/Core/data/models/course_model.dart';
-import 'package:coursaty/features/Home/widgets/course_card.dart';
+import 'package:coursaty/features/My_Courses/presentation/view/my_course_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,7 +23,7 @@ class MyCourseView extends StatelessWidget {
         padding: .symmetric(horizontal: 15.r, vertical: 10.r),
         child: Column(
           children: [
-            CourseCard(
+            MyCourseCard(
               course: CourseModel(
                   id: '1',
                   name: 'Flutter Deploma',
