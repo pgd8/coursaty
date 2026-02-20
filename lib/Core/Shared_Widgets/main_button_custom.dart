@@ -112,7 +112,7 @@ class MainButtonCustom extends StatelessWidget {
                 text,
                 style: isDisabled
                     ? Styles.textStyleGray500R14
-                    : Styles.textStyleWhiteM16.copyWith(
+                    : Styles.textStyleWhiteR14.copyWith(
                   color: textColor ?? ColorData.whiteColor,
                 ),
                 textAlign: TextAlign.center,

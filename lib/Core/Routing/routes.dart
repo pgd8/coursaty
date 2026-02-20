@@ -13,4 +13,6 @@ class Routes {
   static const String kMyCourses = '/myCourses';
   //course Details
   static const String kCourseDetails = '/courseDetails';
+  //myCourseDetails
+  static const String kMyCoursesDetails = '/myCoursesDetails';
 }
