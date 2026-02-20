@@ -1,0 +1,21 @@
+{
+  "kEmail": "البريد الإلكتروني",
+  "kPassword": "كلمة المرور",
+  "kLogin": "تسجيل الدخول",
+  "kDoNotHaveAccount": "ليس لديك حساب؟",
+  "kSignup": "إنشاء حساب",
+  "kName": "الاسم",
+  "kPhoneNumber": "رقم الهاتف",
+  "kConfirmPassword": "تأكيد كلمة المرور",
+  "kAlreadyHaveAccount": "لديك حساب بالفعل؟",
+  "kNotifications": "الإشعارات",
+  "kNoNotificationsYet": "لا توجد إشعارات بعد",
+  "kMyCourses": "دوراتي",
+  "kCourseDetails": "تفاصيل الدورة",
+  "kDuration": "المدة",
+  "kPrice": "السعر",
+  "kDescription": "الوصف",
+  "kEnroll": "الاشتراك",
+  "kMyCourseDetails": "تفاصيل دورتي",
+  "kAttemptExam": "بدء الاختبار"
+}

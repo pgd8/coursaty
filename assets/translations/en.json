@@ -1,0 +1,21 @@
+{
+  "kEmail": "Email",
+  "kPassword": "Password",
+  "kLogin": "Login",
+  "kDoNotHaveAccount": "Don't have an account?",
+  "kSignup": "Sign Up",
+  "kName": "Name",
+  "kPhoneNumber": "Phone Number",
+  "kConfirmPassword": "Confirm Password",
+  "kAlreadyHaveAccount": "Already have an account?",
+  "kNotifications": "Notifications",
+  "kNoNotificationsYet": "No notifications yet",
+  "kMyCourses": "My Courses",
+  "kCourseDetails": "Course Details",
+  "kDuration": "Duration",
+  "kPrice": "Price",
+  "kDescription": "Description",
+  "kEnroll": "Enroll",
+  "kMyCourseDetails": "My Course Details",
+  "kAttemptExam": "Attempt Exam"
+}
