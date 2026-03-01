@@ -1,4 +1,4 @@
-abstract class LocaleKeys{
+abstract class LocaleKeys {
   static const String kEmail = 'kEmail';
   static const String kPassword = 'kPassword';
   static const String kLogin = 'kLogin';
@@ -14,9 +14,22 @@ abstract class LocaleKeys{
   static const String kCourseDetails = 'kCourseDetails';
   static const String kDuration = 'kDuration';
   static const String kPrice = 'kPrice';
-  static const String kDescription = 'kDescription' ;
   static const String kEnroll = 'kEnroll';
   static const String kMyCourseDetails = 'kMyCourseDetails';
   static const String kAttemptExam = 'kAttemptExam';
+  static const String kDescription = 'kDescription';
 
+  //validations
+  static const String kNameRequired = 'kNameRequired';
+  static const String kPhoneNumberRequired = 'kPhoneNumberRequired';
+  static const String kInvalidPhoneNumber = 'kInvalidPhoneNumber';
+  static const String kPasswordRequired = 'kPasswordRequired';
+  static const String kPasswordMustBeAtLeast8Characters =
+      'kPasswordMustBeAtLeast8Characters';
+  static const String kPasswordShouldContainAtLeast1SpecialCharacter =
+      'kPasswordShouldContainAtLeast1SpecialCharacter';
+  static const String kConfirmPasswordRequired = 'kConfirmPasswordRequired';
+  static const String kPasswordsDoNotMatch = 'kPasswordsDoNotMatch';
+  static const String kEmailRequired = 'kEmailRequired';
+  static const String kInvalidEmail = 'kInvalidEmail';
 }

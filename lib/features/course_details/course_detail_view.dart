@@ -8,22 +8,18 @@ import 'package:coursaty/Core/data/models/course_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../Core/Constants/constants.dart';
 
 class CourseDetailView extends StatelessWidget {
-  CourseModel course;
-   CourseDetailView({super.key,required this.course});
+  final CourseModel course;
+  const CourseDetailView({super.key, required this.course});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size(.infinity, Constants.kToolBarHeight),
-        child: AppBarCustom(
-          isHome: false,
-          title: 'Course Details',
-        ),
+        child: AppBarCustom(isHome: false, title: 'Course Details'),
       ),
       body: Padding(
         padding: .all(12.r),
@@ -43,54 +39,64 @@ class CourseDetailView extends StatelessWidget {
                   borderRadius: .circular(16.r),
                 ),
               ),
-              Text(course.name, style: Styles.textStyleBlue500M14,),
-              SizedBox(height: 15.h,),
+              Text(course.name, style: Styles.textStyleBlue500M14),
+              SizedBox(height: 15.h),
               Row(
                 children: [
-                  SvgPicture.asset(AssetsManager.clockIcon,color:ColorData.blue500Color,width: 15.w,
-                    height: 15.h,),
-                  SizedBox(width: 5.w,),
-                  Text('Duration:', style: Styles.textStyleGray500M14,),
-                  SizedBox(width: 10.w,),
-                  Text(course.duration, style: Styles.textStyleGray400R12,),
-
+                  SvgPicture.asset(
+                    AssetsManager.clockIcon,
+                    color: ColorData.blue500Color,
+                    width: 15.w,
+                    height: 15.h,
+                  ),
+                  SizedBox(width: 5.w),
+                  Text('Duration:', style: Styles.textStyleGray500M14),
+                  SizedBox(width: 10.w),
+                  Text(course.duration, style: Styles.textStyleGray400R12),
                 ],
               ),
-              SizedBox(height: 15.h,),
+              SizedBox(height: 15.h),
               Row(
                 children: [
-                  SvgPicture.asset(AssetsManager.poundIcon,color:ColorData.blue500Color,width: 15.w,
-                  height: 15.h,),
-                  SizedBox(width: 5.w,),
-                  Text('Price:', style: Styles.textStyleGray500M14,),
-                  SizedBox(width: 10.w,),
-                  Text(course.price, style: Styles.textStyleGray400R12,),
-
+                  SvgPicture.asset(
+                    AssetsManager.poundIcon,
+                    color: ColorData.blue500Color,
+                    width: 15.w,
+                    height: 15.h,
+                  ),
+                  SizedBox(width: 5.w),
+                  Text('Price:', style: Styles.textStyleGray500M14),
+                  SizedBox(width: 10.w),
+                  Text(course.price, style: Styles.textStyleGray400R12),
                 ],
               ),
-              SizedBox(height: 15.h,),
+              SizedBox(height: 15.h),
               Row(
                 children: [
-                  SvgPicture.asset(AssetsManager.descriptionIcon,color:ColorData.blue500Color,width: 15.w,
-                    height: 15.h,),
-                  SizedBox(width: 5.w,),
-                  Text('Description:', style: Styles.textStyleGray500M14,),
-
+                  SvgPicture.asset(
+                    AssetsManager.descriptionIcon,
+                    color: ColorData.blue500Color,
+                    width: 15.w,
+                    height: 15.h,
+                  ),
+                  SizedBox(width: 5.w),
+                  Text('Description:', style: Styles.textStyleGray500M14),
                 ],
               ),
-              SizedBox(height: 15.h,),
-              Text(course.description,
-              textAlign: .start,
+              SizedBox(height: 15.h),
+              Text(
+                course.description,
+                textAlign: .start,
                 style: Styles.textStyleGray400R12,
               ),
-              SizedBox(height: 20.h,),
+              SizedBox(height: 20.h),
               Center(
                 child: MainButtonCustom(
-                    text: 'Enroll',
+                  text: 'Enroll',
                   width: Unit(context).getWidthSize * 0.7,
-                  onTap: (){},
+                  onTap: () {},
                 ),
-              )
+              ),
             ],
           ),
         ),

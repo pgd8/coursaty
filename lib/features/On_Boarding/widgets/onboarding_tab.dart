@@ -1,17 +1,12 @@
-
 import 'package:coursaty/Core/Themes/style_data.dart';
 import 'package:coursaty/features/On_Boarding/widgets/onboard_bg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OnboardingTab extends StatelessWidget {
-  String body;
-  String image;
-   OnboardingTab({
-    super.key,
-    required this.body,
-    required this.image
-  });
+  final String body;
+  final String image;
+  const OnboardingTab({super.key, required this.body, required this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +16,11 @@ class OnboardingTab extends StatelessWidget {
       children: [
         Center(child: OnboardBg(image: image)),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 12.h),
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 15.h,
-            children: [
-              Text(
-                body,
-                style: Styles.textStylePrimary500SB25,
-              ),
-            ],
+            children: [Text(body, style: Styles.textStylePrimary500SB25)],
           ),
         ),
       ],

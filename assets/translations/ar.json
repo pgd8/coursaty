@@ -17,5 +17,15 @@
   "kDescription": "الوصف",
   "kEnroll": "الاشتراك",
   "kMyCourseDetails": "تفاصيل دورتي",
-  "kAttemptExam": "بدء الاختبار"
+  "kAttemptExam": "بدء الاختبار",
+  "kNameRequired": "الاسم مطلوب",
+  "kPhoneNumberRequired": "رقم الهاتف مطلوب",
+  "kInvalidPhoneNumber": "رقم الهاتف غير صحيح",
+  "kPasswordRequired": "كلمة المرور مطلوبة",
+  "kPasswordMustBeAtLeast8Characters": "يجب أن تكون كلمة المرور 8 أحرف على الأقل",
+  "kPasswordShouldContainAtLeast1SpecialCharacter": "يجب أن تحتوي كلمة المرور على حرف خاص واحد على الأقل",
+  "kConfirmPasswordRequired": "تأكيد كلمة المرور مطلوب",
+  "kPasswordsDoNotMatch": "كلمتا المرور غير متطابقتين",
+  "kEmailRequired": "البريد الإلكتروني مطلوب",
+  "kInvalidEmail": "البريد الإلكتروني غير صالح"
 }

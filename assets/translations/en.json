@@ -17,5 +17,15 @@
   "kDescription": "Description",
   "kEnroll": "Enroll",
   "kMyCourseDetails": "My Course Details",
-  "kAttemptExam": "Attempt Exam"
+  "kAttemptExam": "Attempt Exam",
+  "kNameRequired": "Name is required",
+  "kPhoneNumberRequired": "Phone number is required",
+  "kInvalidPhoneNumber": "Invalid phone number",
+  "kPasswordRequired": "Password is required",
+  "kPasswordMustBeAtLeast8Characters": "Password must be at least 8 characters",
+  "kPasswordShouldContainAtLeast1SpecialCharacter": "Password should contain at least 1 special character",
+  "kConfirmPasswordRequired": "Confirm password is required",
+  "kPasswordsDoNotMatch": "Passwords do not match",
+  "kEmailRequired": "Email is required",
+  "kInvalidEmail": "Invalid email address"
 }

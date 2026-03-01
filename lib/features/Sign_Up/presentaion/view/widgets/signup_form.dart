@@ -1,6 +1,6 @@
+import 'package:coursaty/Core/Validations/validators.dart';
 import 'package:coursaty/core/Shared_Widgets/main_button_custom.dart';
 import 'package:coursaty/core/Themes/color_data.dart';
-import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -54,6 +54,7 @@ class _SignupFormState extends State<SignupForm> {
           Text('Name', style: Styles.textStyleGray600M18),
           SizedBox(height: 10.h),
           TextFormField(
+            validator: Validators.name,
             controller: nameController,
             keyboardType: TextInputType.name,
             textInputAction: TextInputAction.next,
@@ -67,27 +68,10 @@ class _SignupFormState extends State<SignupForm> {
           Text('Phone Number', style: Styles.textStyleGray600M18),
           SizedBox(height: 10.h),
           TextFormField(
+            validator: Validators.phoneNumber,
             controller: phoneNumberController,
             textInputAction: TextInputAction.next,
             keyboardType: TextInputType.phone,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return "Phone number is required";
-              }
-
-              final phoneRegex = RegExp(r'^[0-9]{10,15}$');
-
-              if (!phoneRegex.hasMatch(value)) {
-                return "Enter a valid phone number";
-              }
-
-              if(value.trim().length != 11){
-                return "Enter a valid phone number";
-
-              }
-
-              return null;
-            },
             decoration: InputDecoration(
               isDense: true,
               hintText: '01234567890',
@@ -101,17 +85,7 @@ class _SignupFormState extends State<SignupForm> {
             controller: emailController,
             keyboardType: TextInputType.emailAddress,
             textInputAction: TextInputAction.next,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return "Email is required";
-              }
-
-              if (!EmailValidator.validate(value)) {
-                return "Enter a valid email address";
-              }
-
-              return null;
-            },
+            validator: Validators.email,
             decoration: InputDecoration(
               isDense: true,
               hintText: 'example@email.com',
@@ -124,22 +98,7 @@ class _SignupFormState extends State<SignupForm> {
           TextFormField(
             obscureText: isHidden,
             controller: passwordController,
-            validator: (value){
-              if (value == null || value.isEmpty) {
-                return "Password is required";
-              }
-
-              if(value.length < 8){
-                return 'Password should be at least 8 characters';
-              }
-
-              final passwordRegex = RegExp(r'^(?=.*[!@#$%^&*(),.?":{}|<>]).+$');
-
-              if (!passwordRegex.hasMatch(value)) {
-                return "Password should contain at least 1 special character";
-              }
-              return null;
-            },
+            validator: Validators.password,
             decoration: InputDecoration(
               isCollapsed: true,
               hintText: '••••••••',
@@ -169,18 +128,8 @@ class _SignupFormState extends State<SignupForm> {
           TextFormField(
             obscureText: isHidden,
             controller: passwordConfirmationController,
-            validator: (value){
-              if (value == null || value.isEmpty) {
-                return "Password is required";
-              }
-
-
-              if(value != passwordController.text.trim()){
-                return 'Passwords Don\'t Mathc';
-              }
-              return null;
-            },
-
+            validator: (value) =>
+                Validators.confirmPassword(value, passwordController),
             decoration: InputDecoration(
               isCollapsed: true,
               hintText: '••••••••',
@@ -196,10 +145,10 @@ class _SignupFormState extends State<SignupForm> {
                 },
                 icon: !isHidden
                     ? Icon(
-                  Icons.visibility_rounded,
-                  color: ColorData.primary500Color,
-                  size: 20.r,
-                )
+                        Icons.visibility_rounded,
+                        color: ColorData.primary500Color,
+                        size: 20.r,
+                      )
                     : Icon(Icons.visibility_off_outlined),
               ),
             ),
@@ -209,7 +158,7 @@ class _SignupFormState extends State<SignupForm> {
             text: 'Signup',
             color: ColorData.primary500Color,
             onTap: () {
-              if(formKey.currentState!.validate()){
+              if (formKey.currentState!.validate()) {
                 context.go(Routes.kHome);
               }
             },

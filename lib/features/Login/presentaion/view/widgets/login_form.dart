@@ -1,7 +1,7 @@
 import 'package:coursaty/Core/Routing/routes.dart';
+import 'package:coursaty/Core/Validations/validators.dart';
 import 'package:coursaty/core/Shared_Widgets/main_button_custom.dart';
 import 'package:coursaty/core/Themes/color_data.dart';
-import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -16,7 +16,6 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
-
   final formKey = GlobalKey<FormState>();
   bool isHidden = true;
   late TextEditingController emailController;
@@ -38,7 +37,6 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
-
     return Form(
       key: formKey,
       child: Column(
@@ -47,20 +45,9 @@ class _LoginFormState extends State<LoginForm> {
           Text('Email', style: Styles.textStyleGray600M18),
           SizedBox(height: 10.h),
           TextFormField(
-
             controller: emailController,
             textInputAction: TextInputAction.next,
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return "Email is required";
-              }
-
-              if (!EmailValidator.validate(value)) {
-                return "Enter a valid email address";
-              }
-
-              return null;
-            },
+            validator: Validators.email,
             decoration: InputDecoration(
               isDense: true,
               hintText: 'example@email.com',
@@ -73,26 +60,11 @@ class _LoginFormState extends State<LoginForm> {
           TextFormField(
             obscureText: isHidden,
             controller: passwordController,
-            validator: (value){
-              if (value == null || value.isEmpty) {
-                return "Password is required";
-              }
-
-              if(value.length < 8){
-                return 'Password should be at least 8 characters';
-              }
-
-              final passwordRegex = RegExp(r'^(?=.*[!@#$%^&*(),.?":{}|<>]).+$');
-
-              if (!passwordRegex.hasMatch(value)) {
-                return "Password should contain at least 1 special character";
-              }
-              return null;
-            },
+            validator: Validators.password,
             decoration: InputDecoration(
               isCollapsed: true,
               hintText: '••••••••',
-              prefixIcon: Icon(Icons.lock_outline,size: 20.r,),
+              prefixIcon: Icon(Icons.lock_outline, size: 20.r),
               suffix: IconButton(
                 alignment: .center,
                 iconSize: 20.r,
@@ -103,7 +75,11 @@ class _LoginFormState extends State<LoginForm> {
                   });
                 },
                 icon: !isHidden
-                    ? Icon(Icons.visibility_rounded , color: ColorData.primary500Color,size: 20.r,)
+                    ? Icon(
+                        Icons.visibility_rounded,
+                        color: ColorData.primary500Color,
+                        size: 20.r,
+                      )
                     : Icon(Icons.visibility_off_outlined),
               ),
             ),
@@ -113,7 +89,7 @@ class _LoginFormState extends State<LoginForm> {
             text: 'Login',
             color: ColorData.primary500Color,
             onTap: () {
-              if(formKey.currentState!.validate()){
+              if (formKey.currentState!.validate()) {
                 context.go(Routes.kHome);
               }
             },

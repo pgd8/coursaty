@@ -1,9 +1,7 @@
-import 'package:coursaty/Core/Routing/app_router.dart';
 import 'package:coursaty/core/routing/routes.dart';
 import 'package:coursaty/core/Themes/assets_manager.dart';
 import 'package:coursaty/core/Themes/style_data.dart';
 import 'package:coursaty/core/Themes/unit.dart';
-import 'package:coursaty/features/On_Boarding/onboard_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

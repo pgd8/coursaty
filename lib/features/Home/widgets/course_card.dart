@@ -4,19 +4,18 @@ import 'package:coursaty/Core/data/models/course_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../core/Themes/color_data.dart';
 import '../../../core/routing/routes.dart';
 
 class CourseCard extends StatelessWidget {
-  CourseModel course;
-   CourseCard({super.key,required this.course});
+  final CourseModel course;
+  const CourseCard({super.key, required this.course});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        context.push(Routes.kCourseDetails,extra: {'course' : course});
+      onTap: () {
+        context.push(Routes.kCourseDetails, extra: {'course': course});
       },
       child: Container(
         decoration: Constants.decorationUser,

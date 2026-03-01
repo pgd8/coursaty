@@ -8,13 +8,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class MyCourseCard extends StatelessWidget {
-  CourseModel course;
-  MyCourseCard({super.key,required this.course});
+  final CourseModel course;
+  const MyCourseCard({super.key, required this.course});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         context.push(Routes.kMyCoursesDetails);
       },
       child: Container(
