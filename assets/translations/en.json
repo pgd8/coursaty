@@ -12,7 +12,7 @@
   "kNoNotificationsYet": "No notifications yet",
   "kMyCourses": "My Courses",
   "kCourseDetails": "Course Details",
-  "kDuration": "Duration",
+  "kDuration": "Duration : ",
   "kPrice": "Price",
   "kDescription": "Description",
   "kEnroll": "Enroll",
@@ -27,5 +27,6 @@
   "kConfirmPasswordRequired": "Confirm password is required",
   "kPasswordsDoNotMatch": "Passwords do not match",
   "kEmailRequired": "Email is required",
-  "kInvalidEmail": "Invalid email address"
+  "kInvalidEmail": "Invalid email address",
+  "kChangeLanguage": "Change Language"
 }

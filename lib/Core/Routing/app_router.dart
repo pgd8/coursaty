@@ -28,22 +28,13 @@ class AppRouter {
     ),
 
     //login view
-    GoRoute(
-      path: Routes.kLogin,
-      builder: (context, state) => LoginView(),
-    ),
+    GoRoute(path: Routes.kLogin, builder: (context, state) => LoginView()),
 
     //signup view
-    GoRoute(
-      path: Routes.kSignUp,
-      builder: (context, state) => SignupView(),
-    ),
+    GoRoute(path: Routes.kSignUp, builder: (context, state) => SignupView()),
 
     //home view
-    GoRoute(
-      path: Routes.kHome,
-      builder: (context, state) => HomeView(),
-    ),
+    GoRoute(path: Routes.kHome, builder: (context, state) => HomeView()),
     //notifications view
     GoRoute(
       path: Routes.kNotificationsView,
@@ -59,12 +50,14 @@ class AppRouter {
       path: Routes.kCourseDetails,
       builder: (context, state) {
         Map<String, CourseModel> ex = state.extra as Map<String, CourseModel>;
-        return CourseDetailView(course: ex['course']!,);
-  } ,
+        return CourseDetailView(course: ex['course']!);
+      },
     ),
 
-    GoRoute(path: Routes.kMyCoursesDetails,
-    builder: (context, state) => MyCourseDetails(),)
+    GoRoute(
+      path: Routes.kMyCoursesDetails,
+      builder: (context, state) => MyCourseDetails(),
+    ),
   ];
 
   static GoRouter router = GoRouter(
@@ -73,5 +66,3 @@ class AppRouter {
     navigatorKey: _rootNavigatorKey,
   );
 }
-
-

@@ -10,7 +10,6 @@ class AssetsManager {
   static const String onBoard2 = '${imagePath}onboard2.png';
   static const String onBoard3 = '${imagePath}onboard3.png';
 
-
   //icons
   static const String menuIcon = '${svgPath}menu_icon.svg';
   static const String notificationIcon = '${svgPath}notification_icon.svg';
@@ -18,4 +17,5 @@ class AssetsManager {
   static const String clockIcon = '${svgPath}clock.svg';
   static const String poundIcon = '${svgPath}pound.svg';
   static const String descriptionIcon = '${svgPath}description.svg';
+  static const String translationsIcon = '${svgPath}world_icon.svg';
 }

@@ -1,9 +1,11 @@
 import 'package:coursaty/Core/Shared_Widgets/app_bar_custom.dart';
 import 'package:coursaty/Core/Themes/unit.dart';
 import 'package:coursaty/Core/data/models/course_model.dart';
+import 'package:coursaty/Core/locale_keys.g.dart';
 import 'package:coursaty/core/Constants/constants.dart';
 import 'package:coursaty/features/Home/widgets/course_card.dart';
 import 'package:coursaty/features/Home/widgets/drawer_item.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/Themes/assets_manager.dart';
@@ -37,7 +39,12 @@ class _HomeViewState extends State<HomeView> {
             children: [
               DrawerItem(
                 icon: AssetsManager.myCoursesIcon,
-                title: 'My Courses',
+                title: LocaleKeys.kMyCourses.tr(),
+              ),
+              SizedBox(height: 10.h),
+              DrawerItem(
+                icon: AssetsManager.translationsIcon,
+                title: LocaleKeys.kChangeLanguage.tr(),
               ),
             ],
           ),

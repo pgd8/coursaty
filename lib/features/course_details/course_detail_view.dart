@@ -5,6 +5,8 @@ import 'package:coursaty/Core/Themes/color_data.dart';
 import 'package:coursaty/Core/Themes/style_data.dart';
 import 'package:coursaty/Core/Themes/unit.dart';
 import 'package:coursaty/Core/data/models/course_model.dart';
+import 'package:coursaty/Core/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -50,7 +52,10 @@ class CourseDetailView extends StatelessWidget {
                     height: 15.h,
                   ),
                   SizedBox(width: 5.w),
-                  Text('Duration:', style: Styles.textStyleGray500M14),
+                  Text(
+                    LocaleKeys.kDuration.tr(),
+                    style: Styles.textStyleGray500M14,
+                  ),
                   SizedBox(width: 10.w),
                   Text(course.duration, style: Styles.textStyleGray400R12),
                 ],
@@ -65,7 +70,10 @@ class CourseDetailView extends StatelessWidget {
                     height: 15.h,
                   ),
                   SizedBox(width: 5.w),
-                  Text('Price:', style: Styles.textStyleGray500M14),
+                  Text(
+                    LocaleKeys.kPrice.tr(),
+                    style: Styles.textStyleGray500M14,
+                  ),
                   SizedBox(width: 10.w),
                   Text(course.price, style: Styles.textStyleGray400R12),
                 ],
@@ -80,7 +88,10 @@ class CourseDetailView extends StatelessWidget {
                     height: 15.h,
                   ),
                   SizedBox(width: 5.w),
-                  Text('Description:', style: Styles.textStyleGray500M14),
+                  Text(
+                    LocaleKeys.kDescription.tr(),
+                    style: Styles.textStyleGray500M14,
+                  ),
                 ],
               ),
               SizedBox(height: 15.h),
@@ -92,7 +103,7 @@ class CourseDetailView extends StatelessWidget {
               SizedBox(height: 20.h),
               Center(
                 child: MainButtonCustom(
-                  text: 'Enroll',
+                  text: LocaleKeys.kEnroll.tr(),
                   width: Unit(context).getWidthSize * 0.7,
                   onTap: () {},
                 ),
