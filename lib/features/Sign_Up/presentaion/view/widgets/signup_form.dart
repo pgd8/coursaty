@@ -1,6 +1,8 @@
 import 'package:coursaty/Core/Validations/validators.dart';
+import 'package:coursaty/Core/locale_keys.g.dart';
 import 'package:coursaty/core/Shared_Widgets/main_button_custom.dart';
 import 'package:coursaty/core/Themes/color_data.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -51,7 +53,7 @@ class _SignupFormState extends State<SignupForm> {
       child: Column(
         crossAxisAlignment: .start,
         children: [
-          Text('Name', style: Styles.textStyleGray600M18),
+          Text(LocaleKeys.kName.tr(), style: Styles.textStyleGray600M18),
           SizedBox(height: 10.h),
           TextFormField(
             validator: Validators.name,
@@ -65,7 +67,7 @@ class _SignupFormState extends State<SignupForm> {
             ),
           ),
           SizedBox(height: 20.h),
-          Text('Phone Number', style: Styles.textStyleGray600M18),
+          Text(LocaleKeys.kPhoneNumber.tr(), style: Styles.textStyleGray600M18),
           SizedBox(height: 10.h),
           TextFormField(
             validator: Validators.phoneNumber,
@@ -79,7 +81,7 @@ class _SignupFormState extends State<SignupForm> {
             ),
           ),
           SizedBox(height: 20.h),
-          Text('Email', style: Styles.textStyleGray600M18),
+          Text(LocaleKeys.kEmail.tr(), style: Styles.textStyleGray600M18),
           SizedBox(height: 10.h),
           TextFormField(
             controller: emailController,
@@ -93,7 +95,7 @@ class _SignupFormState extends State<SignupForm> {
             ),
           ),
           SizedBox(height: 20.h),
-          Text('Password', style: Styles.textStyleGray600M18),
+          Text(LocaleKeys.kPassword.tr(), style: Styles.textStyleGray600M18),
           SizedBox(height: 10.h),
           TextFormField(
             obscureText: isHidden,
@@ -123,7 +125,10 @@ class _SignupFormState extends State<SignupForm> {
             ),
           ),
           SizedBox(height: 20.h),
-          Text('Confirm Password', style: Styles.textStyleGray600M18),
+          Text(
+            LocaleKeys.kConfirmPassword.tr(),
+            style: Styles.textStyleGray600M18,
+          ),
           SizedBox(height: 10.h),
           TextFormField(
             obscureText: isHidden,
@@ -155,7 +160,7 @@ class _SignupFormState extends State<SignupForm> {
           ),
           SizedBox(height: 20.h),
           MainButtonCustom(
-            text: 'Signup',
+            text: LocaleKeys.kSignup.tr(),
             color: ColorData.primary500Color,
             onTap: () {
               if (formKey.currentState!.validate()) {

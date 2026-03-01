@@ -1,8 +1,10 @@
+import 'package:coursaty/Core/locale_keys.g.dart';
 import 'package:coursaty/core/routing/routes.dart';
 import 'package:coursaty/core/Themes/assets_manager.dart';
 import 'package:coursaty/core/Themes/style_data.dart';
 import 'package:coursaty/core/Themes/unit.dart';
 import 'package:coursaty/features/Sign_Up/presentaion/view/widgets/signup_form.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -36,14 +38,17 @@ class _SignupViewState extends State<SignupView> {
                 mainAxisAlignment: .center,
                 children: [
                   Text(
-                    'Already Have Account?',
+                    LocaleKeys.kAlreadyHaveAccount.tr(),
                     style: Styles.textStyleGray400R14,
                   ),
                   TextButton(
                     onPressed: () {
                       context.go(Routes.kLogin);
                     },
-                    child: Text('Login', style: Styles.textStyleBlue700R12),
+                    child: Text(
+                      LocaleKeys.kLogin.tr(),
+                      style: Styles.textStyleBlue700R12,
+                    ),
                   ),
                 ],
               ),

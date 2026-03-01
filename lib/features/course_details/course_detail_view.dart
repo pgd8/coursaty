@@ -21,7 +21,10 @@ class CourseDetailView extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size(.infinity, Constants.kToolBarHeight),
-        child: AppBarCustom(isHome: false, title: 'Course Details'),
+        child: AppBarCustom(
+          isHome: false,
+          title: LocaleKeys.kCourseDetails.tr(),
+        ),
       ),
       body: Padding(
         padding: .all(12.r),
