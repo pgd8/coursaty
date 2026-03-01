@@ -12,6 +12,6 @@ class CourseModel {
     required this.image,
     required this.duration,
     required this.description,
-    required this.price
-});
+    required this.price,
+  });
 }
