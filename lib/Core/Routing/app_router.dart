@@ -9,6 +9,7 @@ import 'package:coursaty/features/On_Boarding/onboard_view.dart';
 import 'package:coursaty/features/Sign_Up/presentaion/view/signup_view.dart';
 import 'package:coursaty/features/Splash_Screen/splash_screen.dart';
 import 'package:coursaty/features/course_details/course_detail_view.dart';
+import 'package:coursaty/features/user/prsentation/view/exam_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -58,6 +59,8 @@ class AppRouter {
       path: Routes.kMyCoursesDetails,
       builder: (context, state) => MyCourseDetails(),
     ),
+
+    GoRoute(path: Routes.kExamView, builder: (context, state) => ExamView()),
   ];
 
   static GoRouter router = GoRouter(

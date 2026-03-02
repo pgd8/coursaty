@@ -1,4 +1,5 @@
 import 'package:coursaty/Core/Constants/constants.dart';
+import 'package:coursaty/Core/Routing/routes.dart';
 import 'package:coursaty/Core/Shared_Widgets/app_bar_custom.dart';
 import 'package:coursaty/Core/Shared_Widgets/main_button_custom.dart';
 import 'package:coursaty/Core/Themes/assets_manager.dart';
@@ -7,6 +8,7 @@ import 'package:coursaty/Core/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class MyCourseDetails extends StatelessWidget {
   const MyCourseDetails({super.key});
@@ -39,6 +41,9 @@ class MyCourseDetails extends StatelessWidget {
           MainButtonCustom(
             text: LocaleKeys.kAttemptExam.tr(),
             width: Unit(context).getWidthSize * 0.6,
+            onTap: () {
+              context.push(Routes.kExamView);
+            },
           ),
         ],
       ),

@@ -41,62 +41,65 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
-      child: Column(
-        crossAxisAlignment: .start,
-        children: [
-          Text(LocaleKeys.kEmail.tr(), style: Styles.textStyleGray600M18),
-          SizedBox(height: 10.h),
-          TextFormField(
-            controller: emailController,
-            textInputAction: TextInputAction.next,
-            validator: Validators.email,
-            decoration: InputDecoration(
-              isDense: true,
-              hintText: 'example@email.com',
-              prefixIcon: Icon(Icons.email_outlined),
-            ),
-          ),
-          SizedBox(height: 20.h),
-          Text(LocaleKeys.kPassword.tr(), style: Styles.textStyleGray600M18),
-          SizedBox(height: 10.h),
-          TextFormField(
-            obscureText: isHidden,
-            controller: passwordController,
-            validator: Validators.password,
-            decoration: InputDecoration(
-              isCollapsed: true,
-              hintText: '••••••••',
-              prefixIcon: Icon(Icons.lock_outline, size: 20.r),
-              suffix: IconButton(
-                alignment: .center,
-                iconSize: 20.r,
-                padding: .zero,
-                onPressed: () {
-                  setState(() {
-                    isHidden = !isHidden;
-                  });
-                },
-                icon: !isHidden
-                    ? Icon(
-                        Icons.visibility_rounded,
-                        color: ColorData.primary500Color,
-                        size: 20.r,
-                      )
-                    : Icon(Icons.visibility_off_outlined),
+      child: SingleChildScrollView(
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
+        child: Column(
+          crossAxisAlignment: .start,
+          children: [
+            Text(LocaleKeys.kEmail.tr(), style: Styles.textStyleGray600M18),
+            TextFormField(
+              controller: emailController,
+              textInputAction: TextInputAction.next,
+              validator: Validators.email,
+              decoration: InputDecoration(
+                isDense: true,
+                hintText: 'example@email.com',
+                prefixIcon: Icon(Icons.email_outlined),
               ),
             ),
-          ),
-          SizedBox(height: 20.h),
-          MainButtonCustom(
-            text: LocaleKeys.kLogin.tr(),
-            color: ColorData.primary500Color,
-            onTap: () {
-              if (formKey.currentState!.validate()) {
-                context.go(Routes.kHome);
-              }
-            },
-          ),
-        ],
+            SizedBox(height: 13.h),
+            Text(LocaleKeys.kPassword.tr(), style: Styles.textStyleGray600M18),
+            TextFormField(
+              obscureText: isHidden,
+              controller: passwordController,
+              validator: Validators.password,
+              decoration: InputDecoration(
+                isCollapsed: true,
+                hintText: '••••••••',
+                prefixIcon: Icon(Icons.lock_outline, size: 20.r),
+                suffix: IconButton(
+                  alignment: .center,
+                  iconSize: 20.r,
+                  padding: .zero,
+                  onPressed: () {
+                    setState(() {
+                      isHidden = !isHidden;
+                    });
+                  },
+                  icon: !isHidden
+                      ? Icon(
+                          Icons.visibility_rounded,
+                          color: ColorData.primary500Color,
+                          size: 20.r,
+                        )
+                      : Icon(Icons.visibility_off_outlined),
+                ),
+              ),
+            ),
+            SizedBox(height: 15.h),
+            MainButtonCustom(
+              text: LocaleKeys.kLogin.tr(),
+              color: ColorData.primary500Color,
+              onTap: () {
+                if (formKey.currentState!.validate()) {
+                  context.go(Routes.kHome);
+                }
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

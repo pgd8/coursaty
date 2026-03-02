@@ -1,0 +1,73 @@
+import 'package:camera/camera.dart';
+import 'package:coursaty/features/user/prsentation/manager/user_cubit.dart';
+import 'package:coursaty/features/user/prsentation/manager/user_state.dart';
+import 'package:coursaty/features/user/prsentation/view/widgets/face_painter.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class ExamView extends StatefulWidget {
+  const ExamView({super.key});
+
+  @override
+  State<ExamView> createState() => _ExamViewState();
+}
+
+class _ExamViewState extends State<ExamView> {
+  @override
+  void initState() {
+    super.initState();
+    final cubit = context.read<UserCubit>();
+    cubit.initializeFaceDetector();
+    cubit.initializeCamera();
+  }
+
+  @override
+  void dispose() {
+    context.read<UserCubit>().closeCamera();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: BlocBuilder<UserCubit, UserState>(
+        builder: (context, state) {
+          final cubit = context.read<UserCubit>();
+          if (state is CameraLoading) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          if (state is CameraOpened ||
+              state is FaceDetected ||
+              state is FaceNotDetected) {
+            return Column(
+              children: [
+                Container(
+                  height: 200.h,
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      CameraPreview(cubit.cameraController!),
+                      if (state
+                          is FaceDetected) // this state only when face is detected to create the rounded box
+                        CustomPaint(
+                          painter: FacePainter(
+                            faces: state.faces,
+                            imageSize: state.imageSize,
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+              ],
+            );
+          }
+
+          return const SizedBox();
+        },
+      ),
+    );
+  }
+}
