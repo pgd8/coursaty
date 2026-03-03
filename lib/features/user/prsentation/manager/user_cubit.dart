@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:camera/camera.dart';
 import 'package:coursaty/features/user/prsentation/manager/user_state.dart';
 import 'package:flutter/material.dart';

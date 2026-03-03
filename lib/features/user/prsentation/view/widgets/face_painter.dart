@@ -10,9 +10,9 @@ class FacePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = ColorData.danger500Color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 3;
+      ..color = ColorData.success500Color
+      ..style = .stroke
+      ..strokeWidth = 2;
     final double imageAspectRatio = imageSize.width / imageSize.height;
     final double canvasAspectRatio = size.width / size.height;
 

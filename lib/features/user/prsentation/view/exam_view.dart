@@ -51,9 +51,9 @@ class _ExamViewState extends State<ExamView> {
               state is FaceNotDetected) {
             return Column(
               children: [
-                SizedBox(
+                Container(
                   height: 200.h,
-                  width: MediaQuery.of(context).size.width * 0.5,
+                  width: MediaQuery.of(context).size.width * 0.6,
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
