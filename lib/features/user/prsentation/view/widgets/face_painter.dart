@@ -1,6 +1,5 @@
 import 'package:coursaty/Core/Themes/color_data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
 
 class FacePainter extends CustomPainter {
@@ -14,17 +13,37 @@ class FacePainter extends CustomPainter {
       ..color = ColorData.danger500Color
       ..style = PaintingStyle.stroke
       ..strokeWidth = 3;
-    final scaleX = size.width / imageSize.width;
-    final scaleY = size.height / imageSize.height;
+    final double imageAspectRatio = imageSize.width / imageSize.height;
+    final double canvasAspectRatio = size.width / size.height;
+
+    double scaleX, scaleY;
+    double dx = 0, dy = 0;
+
+    if (canvasAspectRatio > imageAspectRatio) {
+      scaleX = size.width / imageSize.width;
+      scaleY = scaleX;
+      dy = (size.height - imageSize.height * scaleY) / 2;
+    } else {
+      scaleY = size.height / imageSize.height;
+      scaleX = scaleY;
+      dx = (size.width - imageSize.width * scaleX) / 2;
+    }
+
     for (final face in faces) {
-      final rect = Rect.fromLTRB(
-        face.boundingBox.left * scaleX,
-        face.boundingBox.top * scaleY,
-        face.boundingBox.right * scaleX,
-        face.boundingBox.bottom * scaleY,
+      final double centerX =
+          size.width - (face.boundingBox.center.dx * scaleX + dx);
+      final double centerY = face.boundingBox.center.dy * scaleY + dy;
+
+      final double width = face.boundingBox.width * scaleX;
+      final double height = face.boundingBox.height * scaleY;
+
+      final rect = Rect.fromCenter(
+        center: Offset(centerX, centerY),
+        width: width,
+        height: height,
       );
-      final rRect = RRect.fromRectAndRadius(rect, Radius.circular(10.r));
-      canvas.drawRRect(rRect, paint);
+
+      canvas.drawRect(rect, paint);
     }
   }
 

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:camera/camera.dart';
 import 'package:coursaty/features/user/prsentation/manager/user_state.dart';
 import 'package:flutter/material.dart';
@@ -16,9 +18,10 @@ class UserCubit extends Cubit<UserState> {
     faceDetector = FaceDetector(
       options: FaceDetectorOptions(
         enableContours: true,
-        enableLandmarks: true,
-        enableTracking: true,
-        performanceMode: FaceDetectorMode.accurate,
+        enableLandmarks: true, //nose eyes mouth
+        enableTracking: true, //tracking face
+        enableClassification: true,
+        performanceMode: .accurate,
       ),
     );
   }
@@ -74,13 +77,13 @@ class UserCubit extends Cubit<UserState> {
           bytesPerRow: image.planes.first.bytesPerRow,
         ),
       );
-
       final faces = await faceDetector.processImage(inputImage);
+      final validFaces = faces.where((face) => isValidFace(face)).toList();
 
-      if (faces.isNotEmpty) {
+      if (validFaces.isNotEmpty) {
         emit(
           FaceDetected(
-            faces: faces,
+            faces: validFaces,
             imageSize: Size(image.width.toDouble(), image.height.toDouble()),
           ),
         );
@@ -92,6 +95,19 @@ class UserCubit extends Cubit<UserState> {
     }
 
     _isProcessing = false;
+  }
+
+  bool isValidFace(Face face) {
+    final rotY = face.headEulerAngleY ?? 0;
+    final rotX = face.headEulerAngleX ?? 0;
+
+    final isFacingForward = rotY.abs() < 10 && rotX.abs() < 10;
+
+    final eyesOpen =
+        (face.leftEyeOpenProbability ?? 0) > 0.1 &&
+        (face.rightEyeOpenProbability ?? 0) > 0.1;
+
+    return isFacingForward && eyesOpen;
   }
 
   Future<void> closeCamera() async {

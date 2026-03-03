@@ -19,6 +19,7 @@ abstract class LocaleKeys {
   static const String kAttemptExam = 'kAttemptExam';
   static const String kDescription = 'kDescription';
   static const String kChangeLanguage = 'kChangeLanguage';
+  static const String kExam = 'kExam';
 
   //validations
   static const String kNameRequired = 'kNameRequired';

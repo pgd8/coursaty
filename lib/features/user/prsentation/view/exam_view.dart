@@ -1,7 +1,11 @@
 import 'package:camera/camera.dart';
+import 'package:coursaty/Core/Constants/constants.dart';
+import 'package:coursaty/Core/Shared_Widgets/app_bar_custom.dart';
+import 'package:coursaty/Core/locale_keys.g.dart';
 import 'package:coursaty/features/user/prsentation/manager/user_cubit.dart';
 import 'package:coursaty/features/user/prsentation/manager/user_state.dart';
 import 'package:coursaty/features/user/prsentation/view/widgets/face_painter.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,6 +35,10 @@ class _ExamViewState extends State<ExamView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(Constants.kToolBarHeight),
+        child: AppBarCustom(title: LocaleKeys.kExam.tr(), isHome: false),
+      ),
       body: BlocBuilder<UserCubit, UserState>(
         builder: (context, state) {
           final cubit = context.read<UserCubit>();
@@ -43,7 +51,7 @@ class _ExamViewState extends State<ExamView> {
               state is FaceNotDetected) {
             return Column(
               children: [
-                Container(
+                SizedBox(
                   height: 200.h,
                   width: MediaQuery.of(context).size.width * 0.5,
                   child: Stack(
