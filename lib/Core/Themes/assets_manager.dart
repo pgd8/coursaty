@@ -24,4 +24,6 @@ class AssetsManager {
   static const String poundIcon = '${svgPath}pound.svg';
   static const String descriptionIcon = '${svgPath}description.svg';
   static const String translationsIcon = '${svgPath}world_icon.svg';
+  static const String signOutIcon = '${svgPath}signout_icon.svg';
+
 }

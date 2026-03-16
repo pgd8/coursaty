@@ -74,7 +74,7 @@ class _HomeViewState extends State<HomeView> {
                   ),
                   SizedBox(height: 10.h),
                   DrawerItem(
-                    icon: AssetsManager.translationsIcon,
+                    icon: AssetsManager.signOutIcon,
                     title: LocaleKeys.kLogout.tr(),
                     onTap: (){
                       context.pop();
