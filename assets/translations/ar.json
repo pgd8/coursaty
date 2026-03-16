@@ -28,5 +28,6 @@
   "kPasswordsDoNotMatch": "كلمتا المرور غير متطابقتين",
   "kEmailRequired": "البريد الإلكتروني مطلوب",
   "kInvalidEmail": "البريد الإلكتروني غير صالح",
-  "kChangeLanguage": "تغيير اللغة"
+  "kChangeLanguage": "تغيير اللغة",
+  "kExam": "الاختبار"
 }

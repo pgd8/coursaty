@@ -480,6 +480,14 @@ abstract class Styles {
     fontFamily: fontFamily,
   );
 
+  static TextStyle textStyleWarning500R14 = TextStyle(
+    color: ColorData.warning500Color,
+    fontWeight: FontWeightStyles.regular,
+    fontSize: 14.sp,
+    height: 0,
+    fontFamily: fontFamily,
+  );
+
   static TextStyle textStyleGray600M14 = TextStyle(
     color: ColorData.gray600Color,
     fontWeight: FontWeightStyles.medium,

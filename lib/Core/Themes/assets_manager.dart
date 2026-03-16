@@ -1,6 +1,10 @@
 class AssetsManager {
   static const String imagePath = 'assets/images/';
   static const String svgPath = 'assets/svgs/';
+  static const String lottiePath = 'assets/lottie/';
+
+  //Lottie
+  static const String errorLottie = '${lottiePath}error_lottie.json';
 
   //images
   static const String appLogo = '${imagePath}app_logo.png';

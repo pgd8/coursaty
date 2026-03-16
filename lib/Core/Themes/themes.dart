@@ -11,6 +11,7 @@ class Themes {
       toolbarHeight: Constants.kToolBarHeight,
     ),
     inputDecorationTheme: InputDecorationThemeData(
+      suffixIconColor: ColorData.gray300Color,
       hintStyle: Styles.textStyleGray300R14,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.r),

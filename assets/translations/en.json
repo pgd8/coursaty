@@ -28,5 +28,6 @@
   "kPasswordsDoNotMatch": "Passwords do not match",
   "kEmailRequired": "Email is required",
   "kInvalidEmail": "Invalid email address",
-  "kChangeLanguage": "Change Language"
+  "kChangeLanguage": "Change Language",
+  "kExam": "Exam"
 }
