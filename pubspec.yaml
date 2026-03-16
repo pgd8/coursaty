@@ -45,6 +45,9 @@ dependencies:
   camera: ^0.10.5+5
   google_mlkit_face_detection: any
   google_mlkit_commons: any
+  http: ^1.6.0
+  lottie: ^3.3.2
+  shared_preferences: ^2.5.4
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +69,7 @@ flutter:
     - assets/images/
     - assets/svgs/
     - assets/translations/
+    - assets/lottie/
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

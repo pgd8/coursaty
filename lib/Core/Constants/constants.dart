@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Themes/color_data.dart';
 
 class Constants {
+
+  static const String kToken = 'kToken';
+
   static double kToolBarHeight = 56.0;
 
   static const String kEgyptianPound = 'E£';
