@@ -10,7 +10,14 @@ import 'package:go_router/go_router.dart';
 class DrawerItem extends StatefulWidget {
   final String title;
   final String icon;
-  const DrawerItem({super.key, required this.icon, required this.title});
+  final void Function()? onTap;
+
+  const DrawerItem({
+    super.key,
+    required this.icon,
+    required this.title,
+    required this.onTap
+  });
 
   @override
   State<DrawerItem> createState() => _DrawerItemState();
@@ -20,19 +27,8 @@ class _DrawerItemState extends State<DrawerItem> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
+      onTap:  widget.onTap ?? () {
         context.pop();
-        if (widget.title == LocaleKeys.kMyCourses.tr()) {
-          context.push(Routes.kMyCourses);
-        }
-        if (widget.title == LocaleKeys.kChangeLanguage.tr()) {
-          if (context.locale == const Locale('en')) {
-            context.setLocale(const Locale('ar'));
-          } else {
-            context.setLocale(const Locale('en'));
-            setState(() {});
-          }
-        }
       },
       child: Row(
         children: [

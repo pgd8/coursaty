@@ -29,5 +29,9 @@
   "kEmailRequired": "البريد الإلكتروني مطلوب",
   "kInvalidEmail": "البريد الإلكتروني غير صالح",
   "kChangeLanguage": "تغيير اللغة",
-  "kExam": "الاختبار"
+  "kExam": "الاختبار",
+  "kLogout" : "تسجيل خروج",
+  "kAreYouSureYouWantToLogout": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+  "kConfirm": "تأكيد",
+  "kCancel": "إلغاء"
 }

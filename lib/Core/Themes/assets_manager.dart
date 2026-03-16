@@ -5,6 +5,8 @@ class AssetsManager {
 
   //Lottie
   static const String errorLottie = '${lottiePath}error_lottie.json';
+  static const String exitLottie = '${lottiePath}exit_lottie.json';
+
 
   //images
   static const String appLogo = '${imagePath}app_logo.png';

@@ -29,5 +29,10 @@
   "kEmailRequired": "Email is required",
   "kInvalidEmail": "Invalid email address",
   "kChangeLanguage": "Change Language",
-  "kExam": "Exam"
+  "kExam": "Exam",
+  "kLogout": "Logout",
+  "kAreYouSureYouWantToLogout": "Are you sure you want to logout?",
+  "kConfirm": "Confirm",
+  "kCancel": "Cancel"
+
 }

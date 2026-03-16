@@ -20,6 +20,12 @@ abstract class LocaleKeys {
   static const String kDescription = 'kDescription';
   static const String kChangeLanguage = 'kChangeLanguage';
   static const String kExam = 'kExam';
+  static const String kLogout = 'kLogout';
+  static const String kAreYouSureYouWantToLogout = 'kAreYouSureYouWantToLogout';
+  static const String kConfirm = 'kConfirm';
+  static const String kCancel = 'kCancel';
+
+
 
   //validations
   static const String kNameRequired = 'kNameRequired';

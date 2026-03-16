@@ -1,9 +1,11 @@
+import 'package:coursaty/Core/Constants/constants.dart';
 import 'package:coursaty/core/routing/routes.dart';
 import 'package:coursaty/core/Themes/assets_manager.dart';
 import 'package:coursaty/core/Themes/style_data.dart';
 import 'package:coursaty/core/Themes/unit.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,9 +15,10 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
   @override
   void initState() {
-    routeToOnBoarding();
+    routeToAppStart();
     super.initState();
   }
 
@@ -37,11 +40,17 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 
-  void routeToOnBoarding() {
-    Future.delayed(const Duration(seconds: 3), () {
-      if (mounted) {
-        context.go(Routes.kOnBoarding);
-      }
-    });
+  void routeToAppStart() async {
+    final pref = await SharedPreferences.getInstance();
+    final token = pref.getString(Constants.kToken);
+    if(token != null){
+      context.go(Routes.kHome);
+    } else {
+      Future.delayed(const Duration(seconds: 3), () {
+        if (mounted) {
+          context.go(Routes.kOnBoarding);
+        }
+      });
+    }
   }
 }

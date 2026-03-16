@@ -30,3 +30,8 @@ class CameraError extends UserState {
   final String message;
   CameraError(this.message);
 }
+
+class RequestedLogOut extends UserState {}
+
+class LogOutSuccess extends UserState {}
+

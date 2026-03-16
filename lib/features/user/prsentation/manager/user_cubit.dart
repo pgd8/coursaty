@@ -1,9 +1,11 @@
 import 'dart:async';
 import 'package:camera/camera.dart';
+import 'package:coursaty/Core/Constants/constants.dart';
 import 'package:coursaty/features/user/prsentation/manager/user_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class UserCubit extends Cubit<UserState> {
   UserCubit() : super(CameraInitial());
@@ -113,5 +115,14 @@ class UserCubit extends Cubit<UserState> {
     await cameraController?.dispose();
     faceDetector.close();
     emit(CameraClosed());
+  }
+  void requestLogout(){
+    emit(RequestedLogOut());
+  }
+
+  void logOut()async{
+    final prefs = await SharedPreferences.getInstance();
+    prefs.remove(Constants.kToken);
+    emit(LogOutSuccess());
   }
 }
