@@ -4,7 +4,6 @@ import 'package:coursaty/Core/Shared_Widgets/app_bar_custom.dart';
 import 'package:coursaty/Core/Shared_Widgets/functions/shou_logut_dialog.dart';
 import 'package:coursaty/Core/Themes/assets_manager.dart';
 import 'package:coursaty/Core/Themes/unit.dart';
-import 'package:coursaty/Core/data/models/course_model.dart';
 import 'package:coursaty/Core/locale_keys.g.dart';
 import 'package:coursaty/features/Home/prsentation/manager/home_cubit.dart';
 import 'package:coursaty/features/Home/prsentation/manager/home_state.dart';
