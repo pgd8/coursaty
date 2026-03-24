@@ -17,3 +17,18 @@ class HomeError extends HomeState {
 
   HomeError(this.message);
 }
+
+class GetCouseLoading extends HomeState {}
+
+class GotCourseSuccess extends HomeState {
+  final CourseModel course;
+
+  GotCourseSuccess(this.course);
+}
+
+class GetCourseError extends HomeState {
+  final String message;
+
+  GetCourseError(this.message);
+}
+
