@@ -23,4 +23,24 @@ class HomeRepo {
       throw Exception(e.toString());
     }
   }
+
+
+
+
+  getCourseById({required String couseId}) async{
+    try{
+      final Uri url = Uri.parse('${ConstantApi.baseUrl}/api/courses/$couseId');
+      final response = await http.get(url);
+      
+      final data = jsonDecode(response.body);
+      if(response.statusCode == 200||response.statusCode == 201){
+       debugPrint('Course loaded successfully: $data');
+        return CourseModel.fromJson(data);
+      }else{
+        throw Exception('Failed to load course');
+      }
+    } catch (e) {
+      throw Exception(e.toString());
+    }
+  }
 }

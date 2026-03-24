@@ -7,14 +7,14 @@ import 'package:coursaty/Core/Themes/unit.dart';
 import 'package:coursaty/Core/locale_keys.g.dart';
 import 'package:coursaty/features/Home/prsentation/manager/home_cubit.dart';
 import 'package:coursaty/features/Home/prsentation/manager/home_state.dart';
-import 'package:coursaty/features/Home/prsentation/widgets/course_card.dart';
+import 'package:coursaty/features/Home/prsentation/view/widgets/course_card.dart';
 import 'package:coursaty/features/user/prsentation/manager/user_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../user/prsentation/manager/user_state.dart';
+import '../../../user/prsentation/manager/user_state.dart';
 import 'widgets/drawer_item.dart';
 
 class HomeView extends StatefulWidget {
@@ -27,6 +27,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
+  @override
   initState() {
     super.initState();
     context.read<HomeCubit>().getCourses();
@@ -98,6 +99,10 @@ class _HomeViewState extends State<HomeView> {
         },
       ),
       body: BlocBuilder<HomeCubit, HomeState>(
+        buildWhen: (previous, current) =>
+            current is HomeLoadingCourses ||
+            current is HomeError ||
+            current is HomeCoursesLoaded,
         builder: (context, state) {
           if (state is HomeLoadingCourses) {
             return const Center(child: CircularProgressIndicator());

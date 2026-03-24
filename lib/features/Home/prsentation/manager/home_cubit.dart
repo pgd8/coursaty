@@ -16,4 +16,14 @@ class HomeCubit extends Cubit<HomeState> {
       emit(HomeError(e.toString()));
     }
   }
+
+  void getCourseById({required String couseId}) async{
+    emit(GetCouseLoading());
+    try {
+      final course = await homeRepo.getCourseById(couseId: couseId);
+      emit(GotCourseSuccess(course));
+    } catch (e) {
+      emit(GetCourseError(e.toString()));
+    }
+  }
 }

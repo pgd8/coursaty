@@ -16,7 +16,7 @@ class CourseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.push(Routes.kCourseDetails, extra: {'course': course});
+        context.push(Routes.kCourseDetails, extra: {'courseId':  course.id});
       },
       child: Container(
         decoration: Constants.decorationUser,
