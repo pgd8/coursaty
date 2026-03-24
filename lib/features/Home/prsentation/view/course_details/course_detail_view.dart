@@ -23,6 +23,7 @@ class CourseDetailView extends StatefulWidget {
 }
 
 class _CourseDetailViewState extends State<CourseDetailView> {
+  @override
   initState() {
     super.initState();
     context.read<HomeCubit>().getCourseById(couseId: widget.courseId);
