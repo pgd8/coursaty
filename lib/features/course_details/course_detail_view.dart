@@ -104,6 +104,24 @@ class CourseDetailView extends StatelessWidget {
               Row(
                 children: [
                   SvgPicture.asset(
+                    AssetsManager.personsIcon,
+                    color: ColorData.blue500Color,
+                    width: 15.w,
+                    height: 15.h,
+                  ),
+                  SizedBox(width: 5.w),
+                  Text(
+                    LocaleKeys.kCapacity.tr(),
+                    style: Styles.textStyleGray500M14,
+                  ),
+                  SizedBox(width: 10.w),
+                  Text(course.capacity.toString(), style: Styles.textStyleGray400R12),
+                ],
+              ),
+              SizedBox(height: 15.h),
+              Row(
+                children: [
+                  SvgPicture.asset(
                     AssetsManager.descriptionIcon,
                     color: ColorData.blue500Color,
                     width: 15.w,

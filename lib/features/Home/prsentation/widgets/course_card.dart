@@ -1,5 +1,6 @@
 import 'package:coursaty/Core/Constants/constants.dart';
 import 'package:coursaty/Core/Routing/routes.dart';
+import 'package:coursaty/Core/Themes/assets_manager.dart';
 import 'package:coursaty/Core/Themes/style_data.dart';
 import 'package:coursaty/Core/data/models/course_model.dart';
 import 'package:flutter/material.dart';
@@ -22,26 +23,28 @@ class CourseCard extends StatelessWidget {
         height: 220.h,
         child: Column(
           children: [
-              if(course.image != null)
-            Container(
-              width: .infinity,
-              height: 150.h,
-              margin: .symmetric(horizontal: 15.w, vertical: 10.h),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(course.image ?? ''),
-                  fit: .fill,
+              if(course.image != null|| course.image != '')
+            Expanded(
+              child: Container(
+                width: .infinity,
+                height: 150.h,
+                margin: .symmetric(horizontal: 15.w, vertical: 10.h),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(course.image ?? AssetsManager.sqlCourseImage),
+                    fit: .fill,
+                  ),
+                  borderRadius: .circular(16.r),
                 ),
-                borderRadius: .circular(16.r),
               ),
             ),
             Container(
               padding: .symmetric(horizontal: 10.w),
               width: .infinity,
-              alignment: .bottomCenter,
+              height: 50.h,
               decoration: BoxDecoration(
                 color: ColorData.primary500Color,
-                borderRadius: BorderRadius.circular(16.r),
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(16.r), bottomRight: Radius.circular(16.r)),
               ),
               child: Row(
                 mainAxisAlignment: .spaceBetween,
