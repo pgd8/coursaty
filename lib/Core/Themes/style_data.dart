@@ -1,6 +1,6 @@
-import 'package:coursaty/core/Themes/color_data.dart';
-import 'package:coursaty/core/Themes/font_weight_data.dart';
-import 'package:coursaty/core/Themes/unit.dart';
+import 'package:coursaty/Core/Themes/color_data.dart';
+import 'package:coursaty/Core/Themes/font_weight_data.dart';
+import 'package:coursaty/Core/Themes/unit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

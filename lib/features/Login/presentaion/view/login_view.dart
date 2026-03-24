@@ -1,8 +1,8 @@
 import 'package:coursaty/Core/locale_keys.g.dart';
-import 'package:coursaty/core/routing/routes.dart';
-import 'package:coursaty/core/Themes/assets_manager.dart';
-import 'package:coursaty/core/Themes/style_data.dart';
-import 'package:coursaty/core/Themes/unit.dart';
+import 'package:coursaty/Core/Routing/routes.dart';
+import 'package:coursaty/Core/Themes/assets_manager.dart';
+import 'package:coursaty/Core/Themes/style_data.dart';
+import 'package:coursaty/Core/Themes/unit.dart';
 import 'package:coursaty/features/Login/presentaion/view/widgets/login_form.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';

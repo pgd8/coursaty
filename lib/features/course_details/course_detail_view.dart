@@ -32,19 +32,20 @@ class CourseDetailView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: .start,
             children: [
+              if(course.image != null)
               Container(
                 width: .infinity,
                 height: 150.h,
                 margin: .symmetric(horizontal: 15.w, vertical: 10.h),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(course.image),
+                    image: AssetImage(course.image!),
                     fit: .fill,
                   ),
                   borderRadius: .circular(16.r),
                 ),
               ),
-              Text(course.name, style: Styles.textStyleBlue500M14),
+              Text(course.title, style: Styles.textStyleBlue500M14),
               SizedBox(height: 15.h),
               Row(
                 children: [
@@ -60,7 +61,7 @@ class CourseDetailView extends StatelessWidget {
                     style: Styles.textStyleGray500M14,
                   ),
                   SizedBox(width: 10.w),
-                  Text(course.duration, style: Styles.textStyleGray400R12),
+                  Text(course.duration.toString(), style: Styles.textStyleGray400R12),
                 ],
               ),
               SizedBox(height: 15.h),
@@ -78,7 +79,43 @@ class CourseDetailView extends StatelessWidget {
                     style: Styles.textStyleGray500M14,
                   ),
                   SizedBox(width: 10.w),
-                  Text(course.price, style: Styles.textStyleGray400R12),
+                  Text(course.cost.toString(), style: Styles.textStyleGray400R12),
+                ],
+              ),
+              SizedBox(height: 15.h),
+               Row(
+                children: [
+                  SvgPicture.asset(
+                    AssetsManager.personsIcon,
+                    color: ColorData.blue500Color,
+                    width: 15.w,
+                    height: 15.h,
+                  ),
+                  SizedBox(width: 5.w),
+                  Text(
+                    LocaleKeys.kCapacity.tr(),
+                    style: Styles.textStyleGray500M14,
+                  ),
+                  SizedBox(width: 10.w),
+                  Text(course.capacity.toString(), style: Styles.textStyleGray400R12),
+                ],
+              ),
+              SizedBox(height: 15.h),
+              Row(
+                children: [
+                  SvgPicture.asset(
+                    AssetsManager.personsIcon,
+                    color: ColorData.blue500Color,
+                    width: 15.w,
+                    height: 15.h,
+                  ),
+                  SizedBox(width: 5.w),
+                  Text(
+                    LocaleKeys.kCapacity.tr(),
+                    style: Styles.textStyleGray500M14,
+                  ),
+                  SizedBox(width: 10.w),
+                  Text(course.capacity.toString(), style: Styles.textStyleGray400R12),
                 ],
               ),
               SizedBox(height: 15.h),

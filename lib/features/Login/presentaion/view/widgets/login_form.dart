@@ -2,8 +2,9 @@ import 'package:coursaty/Core/Routing/routes.dart';
 import 'package:coursaty/Core/Shared_Widgets/functions/show_error_dialog.dart';
 import 'package:coursaty/Core/Validations/validators.dart';
 import 'package:coursaty/Core/locale_keys.g.dart';
-import 'package:coursaty/core/Shared_Widgets/main_button_custom.dart';
-import 'package:coursaty/core/Themes/color_data.dart';
+import 'package:coursaty/Core/Shared_Widgets/main_button_custom.dart';
+import 'package:coursaty/Core/Themes/color_data.dart';
+import 'package:coursaty/Core/Themes/style_data.dart';
 import 'package:coursaty/features/Login/presentaion/manager/login_cubit.dart';
 import 'package:coursaty/features/Login/presentaion/manager/login_state.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -11,8 +12,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../../../core/Themes/style_data.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});

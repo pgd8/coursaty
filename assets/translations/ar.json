@@ -33,5 +33,6 @@
   "kLogout" : "تسجيل خروج",
   "kAreYouSureYouWantToLogout": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
   "kConfirm": "تأكيد",
-  "kCancel": "إلغاء"
+  "kCancel": "إلغاء",
+  "kCapacity": "السعة"
 }

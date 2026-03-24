@@ -15,6 +15,7 @@ class AssetsManager {
   static const String onBoard1 = '${imagePath}onboard1.png';
   static const String onBoard2 = '${imagePath}onboard2.png';
   static const String onBoard3 = '${imagePath}onboard3.png';
+  static const String sqlCourseImage = '${imagePath}sql_course.jpg';
 
   //icons
   static const String menuIcon = '${svgPath}menu_icon.svg';
@@ -25,5 +26,6 @@ class AssetsManager {
   static const String descriptionIcon = '${svgPath}description.svg';
   static const String translationsIcon = '${svgPath}world_icon.svg';
   static const String signOutIcon = '${svgPath}signout_icon.svg';
+  static const String personsIcon = '${svgPath}persons.svg';
 
 }

@@ -33,6 +33,6 @@
   "kLogout": "Logout",
   "kAreYouSureYouWantToLogout": "Are you sure you want to logout?",
   "kConfirm": "Confirm",
-  "kCancel": "Cancel"
-
+  "kCancel": "Cancel",
+  "kCapacity": "Capacity"
 }
