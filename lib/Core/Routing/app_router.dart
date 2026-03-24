@@ -1,5 +1,5 @@
+import 'package:coursaty/Core/Routing/routes.dart';
 import 'package:coursaty/Core/data/models/course_model.dart';
-import 'package:coursaty/core/routing/routes.dart';
 import 'package:coursaty/features/Home/home_view.dart';
 import 'package:coursaty/features/Login/presentaion/view/login_view.dart';
 import 'package:coursaty/features/My_Courses/my_course_details.dart';

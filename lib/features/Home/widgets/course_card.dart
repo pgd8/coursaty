@@ -1,11 +1,11 @@
 import 'package:coursaty/Core/Constants/constants.dart';
+import 'package:coursaty/Core/Routing/routes.dart';
 import 'package:coursaty/Core/Themes/style_data.dart';
 import 'package:coursaty/Core/data/models/course_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../../core/Themes/color_data.dart';
-import '../../../core/routing/routes.dart';
+import 'package:coursaty/Core/Themes/color_data.dart';
 
 class CourseCard extends StatelessWidget {
   final CourseModel course;

@@ -1,11 +1,11 @@
+import 'package:coursaty/Core/Constants/constants.dart';
+import 'package:coursaty/Core/Routing/routes.dart';
 import 'package:coursaty/Core/Shared_Widgets/app_bar_custom.dart';
 import 'package:coursaty/Core/Shared_Widgets/functions/shou_logut_dialog.dart';
-import 'package:coursaty/Core/Shared_Widgets/main_button_custom.dart';
-import 'package:coursaty/Core/Themes/style_data.dart';
+import 'package:coursaty/Core/Themes/assets_manager.dart';
 import 'package:coursaty/Core/Themes/unit.dart';
 import 'package:coursaty/Core/data/models/course_model.dart';
 import 'package:coursaty/Core/locale_keys.g.dart';
-import 'package:coursaty/core/Constants/constants.dart';
 import 'package:coursaty/features/Home/widgets/course_card.dart';
 import 'package:coursaty/features/Home/widgets/drawer_item.dart';
 import 'package:coursaty/features/user/prsentation/manager/user_cubit.dart';
@@ -14,11 +14,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lottie/lottie.dart';
-import '../../Core/Themes/color_data.dart';
-import '../../core/Themes/assets_manager.dart';
-import '../../core/routing/routes.dart';
 import '../user/prsentation/manager/user_state.dart';
+
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
