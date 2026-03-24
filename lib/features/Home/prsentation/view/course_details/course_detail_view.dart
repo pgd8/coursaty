@@ -45,6 +45,9 @@ class _CourseDetailViewState extends State<CourseDetailView> {
             body: Center(child: CircularProgressIndicator()),
           );
         } else if (state is GetCourseError) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(state.message)),
+          );
           return Scaffold(
             appBar: PreferredSize(
               preferredSize: Size(.infinity, Constants.kToolBarHeight),
@@ -53,7 +56,6 @@ class _CourseDetailViewState extends State<CourseDetailView> {
                 title: LocaleKeys.kCourseDetails.tr(),
               ),
             ),
-            body: Center(child: Text(state.message)),
           );
         } else if (state is GotCourseSuccess) {
           final course = state.course;

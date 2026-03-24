@@ -107,7 +107,10 @@ class _HomeViewState extends State<HomeView> {
           if (state is HomeLoadingCourses) {
             return const Center(child: CircularProgressIndicator());
           } else if (state is HomeError) {
-            return Center(child: Text(state.message));
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(state.message)),
+            );
+            return SizedBox.shrink();
           } else if (state is HomeCoursesLoaded) {
             final courses = state.courses;
             debugPrint(courses.length.toString());
