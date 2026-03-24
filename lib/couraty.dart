@@ -1,5 +1,7 @@
 import 'package:coursaty/Core/Routing/app_router.dart';
 import 'package:coursaty/Core/Themes/themes.dart';
+import 'package:coursaty/features/Home/domain/home_repo.dart';
+import 'package:coursaty/features/Home/prsentation/manager/home_cubit.dart';
 import 'package:coursaty/features/Login/domain/login_repo.dart';
 import 'package:coursaty/features/Sign_Up/presentaion/manager/signup_cubit.dart';
 import 'package:coursaty/features/user/prsentation/manager/user_cubit.dart';
@@ -28,6 +30,7 @@ class CoursatyApp extends StatelessWidget {
         BlocProvider<LoginCubit>(
           create: (context) => LoginCubit(LoginRepo()),
         ),
+        BlocProvider(create: (context) => HomeCubit(HomeRepo())),
 
       ],
       child: ScreenUtilInit(

@@ -24,6 +24,7 @@ abstract class LocaleKeys {
   static const String kAreYouSureYouWantToLogout = 'kAreYouSureYouWantToLogout';
   static const String kConfirm = 'kConfirm';
   static const String kCancel = 'kCancel';
+  static const String kCapacity = 'kCapacity';
 
 
 

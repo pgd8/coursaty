@@ -22,13 +22,14 @@ class MyCourseCard extends StatelessWidget {
         height: 220.h,
         child: Column(
           children: [
+            if(course.image != null)
             Container(
               width: .infinity,
               height: 150.h,
               margin: .symmetric(horizontal: 15.w, vertical: 10.h),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(course.image),
+                  image: AssetImage(course.image!),
                   fit: .fill,
                 ),
                 borderRadius: .circular(16.r),
@@ -45,16 +46,16 @@ class MyCourseCard extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: .spaceBetween,
                   children: [
-                    Text(course.name, style: Styles.textStyleWhiteR14),
+                    Text(course.title, style: Styles.textStyleWhiteR14),
                     Row(
                       children: [
                         Text('Duration:', style: Styles.textStyleWhiteR14),
                         SizedBox(width: 2.w),
-                        Text(course.duration, style: Styles.textStyleWhiteR12),
+                        Text(course.duration.toString(), style: Styles.textStyleWhiteR12),
                       ],
                     ),
                     Text(
-                      '${course.price} ${Constants.kEgyptianPound}',
+                      '${course.cost} ${Constants.kEgyptianPound}',
                       style: Styles.textStyleWhiteR12,
                     ),
                   ],

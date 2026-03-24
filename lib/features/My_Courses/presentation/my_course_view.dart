@@ -25,10 +25,12 @@ class MyCourseView extends StatelessWidget {
             MyCourseCard(
               course: CourseModel(
                 id: '1',
-                name: 'Flutter Deploma',
+                title: 'Flutter Deploma',
                 image: AssetsManager.flutterCourse,
-                duration: '3 months',
-                price: '6000',
+                duration: 3,
+                cost: 6000,
+                capacity: 30,
+                isActive: true,
                 description:
                     """ Flutter is Google’s open-source UI toolkit for building high-performance, natively compiled applications from a single codebase for mobile (iOS & Android), web, desktop, and embedded devices. This course teaches you how to design, develop, test, and deploy beautiful, responsive apps using Dart and Flutter’s rich ecosystem of widgets and tools.
 

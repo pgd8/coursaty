@@ -22,43 +22,43 @@ class CourseCard extends StatelessWidget {
         height: 220.h,
         child: Column(
           children: [
+              if(course.image != null)
             Container(
               width: .infinity,
               height: 150.h,
               margin: .symmetric(horizontal: 15.w, vertical: 10.h),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(course.image),
+                  image: AssetImage(course.image ?? ''),
                   fit: .fill,
                 ),
                 borderRadius: .circular(16.r),
               ),
             ),
-            Expanded(
-              child: Container(
-                padding: .symmetric(horizontal: 10.w),
-                width: .infinity,
-                decoration: BoxDecoration(
-                  color: ColorData.primary500Color,
-                  borderRadius: BorderRadius.circular(16.r),
-                ),
-                child: Row(
-                  mainAxisAlignment: .spaceBetween,
-                  children: [
-                    Text(course.name, style: Styles.textStyleWhiteR14),
-                    Row(
-                      children: [
-                        Text('Duration:', style: Styles.textStyleWhiteR14),
-                        SizedBox(width: 2.w),
-                        Text(course.duration, style: Styles.textStyleWhiteR12),
-                      ],
-                    ),
-                    Text(
-                      '${course.price} ${Constants.kEgyptianPound}',
-                      style: Styles.textStyleWhiteR12,
-                    ),
-                  ],
-                ),
+            Container(
+              padding: .symmetric(horizontal: 10.w),
+              width: .infinity,
+              alignment: .bottomCenter,
+              decoration: BoxDecoration(
+                color: ColorData.primary500Color,
+                borderRadius: BorderRadius.circular(16.r),
+              ),
+              child: Row(
+                mainAxisAlignment: .spaceBetween,
+                children: [
+                  Text(course.title, style: Styles.textStyleWhiteR14),
+                  Row(
+                    children: [
+                      Text('Duration:', style: Styles.textStyleWhiteR14),
+                      SizedBox(width: 2.w),
+                      Text(course.duration.toString(), style: Styles.textStyleWhiteR12),
+                    ],
+                  ),
+                  Text(
+                    '${course.cost} ${Constants.kEgyptianPound}',
+                    style: Styles.textStyleWhiteR12,
+                  ),
+                ],
               ),
             ),
           ],
