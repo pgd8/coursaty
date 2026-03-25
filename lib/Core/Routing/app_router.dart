@@ -1,8 +1,8 @@
 import 'package:coursaty/Core/Routing/routes.dart';
 import 'package:coursaty/features/Home/prsentation/view/home_view.dart';
 import 'package:coursaty/features/Login/presentaion/view/login_view.dart';
-import 'package:coursaty/features/My_Courses/my_course_details.dart';
-import 'package:coursaty/features/My_Courses/presentation/my_course_view.dart';
+import 'package:coursaty/features/Home/prsentation/view/My_Courses/my_course_details.dart';
+import 'package:coursaty/features/Home/prsentation/view/My_Courses/my_course_view.dart';
 import 'package:coursaty/features/Notifications/presentaion/view/notification_view.dart';
 import 'package:coursaty/features/On_Boarding/onboard_view.dart';
 import 'package:coursaty/features/Sign_Up/presentaion/view/signup_view.dart';

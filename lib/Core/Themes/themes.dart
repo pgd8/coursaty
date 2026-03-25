@@ -28,10 +28,6 @@ class Themes {
             borderSide: BorderSide(color: ColorData.danger500Color)
         )
     ),
-    snackBarTheme:SnackBarThemeData(
-      backgroundColor: ColorData.warning500Color,
-      contentTextStyle: Styles.textStyleWhiteR14,
-    ),
     progressIndicatorTheme: ProgressIndicatorThemeData(
       color: ColorData.primary500Color,
     ),

@@ -32,3 +32,17 @@ class GetCourseError extends HomeState {
   GetCourseError(this.message);
 }
 
+
+class EnrollCourseLoading extends HomeState {}
+
+class EnrollCourseSuccess extends HomeState {
+  final CourseModel course;
+  EnrollCourseSuccess(this.course);
+}
+
+
+class EnrollCourseError extends HomeState {
+  final String message;
+  EnrollCourseError({required this.message});
+}
+
