@@ -26,4 +26,14 @@ class HomeCubit extends Cubit<HomeState> {
       emit(GetCourseError(e.toString()));
     }
   }
+
+  Future<void> enrollCourse({required String courseID}) async {
+    emit(EnrollCourseLoading());
+    try{
+      final course = await homeRepo.enrollCourse(courseID: courseID);
+      emit(EnrollCourseSuccess(course));
+    }catch(e){
+      emit(EnrollCourseError(message: e.toString()));
+    }
+  }
 }
