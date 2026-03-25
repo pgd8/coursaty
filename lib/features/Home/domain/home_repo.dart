@@ -73,7 +73,7 @@ class HomeRepo {
         throw Exception('Failed to enroll course');
       }
     } catch (e) {
-      throw Exception(e.toString());
+      throw Exception('Failed to enroll course: ${e.toString()}');
     }
   }
 }
