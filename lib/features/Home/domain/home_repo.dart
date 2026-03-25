@@ -69,11 +69,13 @@ class HomeRepo {
       if(response.statusCode == 200||response.statusCode == 201){
        debugPrint('Course enrolled successfully: $data');
         return CourseModel.fromJson(data);
+      } else if(response.statusCode == 409){
+        throw Exception('Already enrolled in this course');
       }else{
         throw Exception('Failed to enroll course');
       }
     } catch (e) {
-      throw Exception('Failed to enroll course: ${e.toString()}');
+      throw Exception('Failed to enroll course');
     }
   }
 }
