@@ -1,4 +1,5 @@
 import 'package:coursaty/Core/data/models/course_model.dart';
+import 'package:coursaty/Core/data/models/enrolled_course_model.dart';
 
 class HomeState {}
 
@@ -32,7 +33,6 @@ class GetCourseError extends HomeState {
   GetCourseError(this.message);
 }
 
-
 class EnrollCourseLoading extends HomeState {}
 
 class EnrollCourseSuccess extends HomeState {
@@ -40,9 +40,31 @@ class EnrollCourseSuccess extends HomeState {
   EnrollCourseSuccess(this.course);
 }
 
-
 class EnrollCourseError extends HomeState {
   final String message;
   EnrollCourseError({required this.message});
 }
 
+class GetMyCoursesLoading extends HomeState {}
+
+class GetMyCoursesSuccess extends HomeState {
+  final List<EnrolledCourseModel> courses;
+  GetMyCoursesSuccess(this.courses);
+}
+
+class GetMyCoursesError extends HomeState {
+  final String message;
+  GetMyCoursesError({required this.message});
+}
+
+class GetMyCourseByIdLoading extends HomeState {}
+
+class GetMyCourseByIdSuccess extends HomeState {
+  final EnrolledCourseModel course;
+  GetMyCourseByIdSuccess(this.course);
+}
+
+class GetMyCourseByIdError extends HomeState {
+  final String message;
+  GetMyCourseByIdError({required this.message});
+}

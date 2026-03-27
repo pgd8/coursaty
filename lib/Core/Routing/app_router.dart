@@ -56,7 +56,10 @@ class AppRouter {
 
     GoRoute(
       path: Routes.kMyCoursesDetails,
-      builder: (context, state) => MyCourseDetails(),
+      builder: (context, state) {
+        Map<String, String> ex = state.extra as Map<String, String>;
+        return MyCourseDetails(courseId: ex['courseId']!);
+      },
     ),
 
     GoRoute(path: Routes.kExamView, builder: (context, state) => ExamView()),

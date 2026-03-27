@@ -16,35 +16,49 @@ class CourseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.push(Routes.kCourseDetails, extra: {'courseId':  course.id});
+        context.push(Routes.kCourseDetails, extra: {'courseId': course.id});
       },
       child: Container(
         decoration: Constants.decorationUser,
         height: 220.h,
         child: Column(
           children: [
-              if(course.image != null|| course.image != '')
-            Expanded(
-              child: Container(
-                width: .infinity,
-                height: 150.h,
-                margin: .symmetric(horizontal: 15.w, vertical: 10.h),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(course.image ?? AssetsManager.sqlCourseImage),
-                    fit: .fill,
+            course.image != null && course.image!.isEmpty
+                ? Container(
+                    width: .infinity,
+                    height: 150.h,
+                    margin: .symmetric(horizontal: 15.w, vertical: 10.h),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(AssetsManager.placeHolderImage),
+                        fit: .fill,
+                      ),
+                      borderRadius: .circular(16.r),
+                    ),
+                  )
+                : Container(
+                    width: .infinity,
+                    height: 150.h,
+                    margin: .symmetric(horizontal: 15.w, vertical: 10.h),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage(course.image!),
+                        fit: .fill,
+                      ),
+                      borderRadius: .circular(16.r),
+                    ),
                   ),
-                  borderRadius: .circular(16.r),
-                ),
-              ),
-            ),
+
             Container(
               padding: .symmetric(horizontal: 10.w),
               width: .infinity,
               height: 50.h,
               decoration: BoxDecoration(
                 color: ColorData.primary500Color,
-                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(16.r), bottomRight: Radius.circular(16.r)),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(16.r),
+                  bottomRight: Radius.circular(16.r),
+                ),
               ),
               child: Row(
                 mainAxisAlignment: .spaceBetween,
@@ -54,7 +68,10 @@ class CourseCard extends StatelessWidget {
                     children: [
                       Text('Duration:', style: Styles.textStyleWhiteR14),
                       SizedBox(width: 2.w),
-                      Text(course.duration.toString(), style: Styles.textStyleWhiteR12),
+                      Text(
+                        course.duration.toString(),
+                        style: Styles.textStyleWhiteR12,
+                      ),
                     ],
                   ),
                   Text(
