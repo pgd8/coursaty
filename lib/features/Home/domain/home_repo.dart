@@ -125,7 +125,12 @@ class HomeRepo {
       final data = jsonDecode(response.body);
       if (response.statusCode == 200 || response.statusCode == 201) {
         debugPrint('My course loaded successfully: $data');
-        return EnrolledCourseModel.fromJson(data);
+        final List<EnrolledCourseModel> courses = data
+            .map<EnrolledCourseModel>(
+              (course) => EnrolledCourseModel.fromJson(course),
+            )
+            .toList();
+        return courses.first;
       } else {
         throw Exception('Failed to load my course');
       }
