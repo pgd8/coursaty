@@ -111,7 +111,7 @@ class HomeRepo {
   }) async {
     try {
       final Uri url = Uri.parse(
-        '${ConstantApi.baseUrl}/api/enrollments/course/$courseId',
+        '${ConstantApi.baseUrl}/api/enrollments/course/$courseId/me',
       );
       String token = await getToken();
       final response = await http.get(

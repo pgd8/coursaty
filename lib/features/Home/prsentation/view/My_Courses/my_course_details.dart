@@ -39,6 +39,11 @@ class _MyCourseDetailsState extends State<MyCourseDetails> {
         ),
       ),
       body: BlocBuilder<HomeCubit, HomeState>(
+        buildWhen: (previous, current) {
+          return current is GetMyCourseByIdLoading ||
+              current is GetMyCourseByIdError ||
+              current is GetMyCourseByIdSuccess;
+        },
         builder: (context, state) {
           if (state is GetMyCourseByIdLoading) {
             return Center(child: CircularProgressIndicator());
@@ -46,30 +51,48 @@ class _MyCourseDetailsState extends State<MyCourseDetails> {
           if (state is GetMyCourseByIdError) {
             return Center(child: Text(state.message));
           }
-          return Column(
-            children: [
-              Container(
-                width: .infinity,
-                height: 150.h,
-                margin: .symmetric(horizontal: 15.w, vertical: 10.h),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(AssetsManager.flutterCourse),
-                    fit: .fill,
-                  ),
-                  borderRadius: .circular(16.r),
+          if (state is GetMyCourseByIdSuccess) {
+            final course = state.course;
+            return Column(
+              children: [
+                course.courseModel.image != null &&
+                        course.courseModel.image!.isNotEmpty
+                    ? Container(
+                        width: .infinity,
+                        height: 150.h,
+                        margin: .symmetric(horizontal: 15.w, vertical: 10.h),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(AssetsManager.placeHolderImage),
+                            fit: .fill,
+                          ),
+                          borderRadius: .circular(16.r),
+                        ),
+                      )
+                    : Container(
+                        width: .infinity,
+                        height: 150.h,
+                        margin: .symmetric(horizontal: 15.w, vertical: 10.h),
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage(course.courseModel.image!),
+                            fit: .fill,
+                          ),
+                          borderRadius: .circular(16.r),
+                        ),
+                      ),
+                SizedBox(height: 20.h),
+                MainButtonCustom(
+                  text: LocaleKeys.kAttemptExam.tr(),
+                  width: Unit(context).getWidthSize * 0.6,
+                  onTap: () {
+                    context.push(Routes.kExamView);
+                  },
                 ),
-              ),
-              SizedBox(height: 20.h),
-              MainButtonCustom(
-                text: LocaleKeys.kAttemptExam.tr(),
-                width: Unit(context).getWidthSize * 0.6,
-                onTap: () {
-                  context.push(Routes.kExamView);
-                },
-              ),
-            ],
-          );
+              ],
+            );
+          }
+          return SizedBox.shrink();
         },
       ),
     );

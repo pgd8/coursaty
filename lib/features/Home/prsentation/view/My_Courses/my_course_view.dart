@@ -33,6 +33,11 @@ class _MyCourseViewState extends State<MyCourseView> {
       body: Padding(
         padding: .symmetric(horizontal: 15.r, vertical: 10.r),
         child: BlocBuilder<HomeCubit, HomeState>(
+          buildWhen: (previous, current) {
+            return current is GetMyCoursesLoading ||
+                current is GetMyCoursesError ||
+                current is GetMyCoursesSuccess;
+          },
           builder: (context, state) {
             if (state is GetMyCoursesLoading) {
               return const Center(child: CircularProgressIndicator());
@@ -40,7 +45,7 @@ class _MyCourseViewState extends State<MyCourseView> {
               return ListView.builder(
                 itemCount: state.courses.length,
                 itemBuilder: (context, index) {
-                  return MyCourseCard(course: state.courses[index].courseModel);
+                  return MyCourseCard(course: state.courses[index]);
                 },
               );
             } else if (state is GetMyCoursesError) {

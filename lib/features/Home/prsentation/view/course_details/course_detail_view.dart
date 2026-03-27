@@ -87,19 +87,39 @@ class _CourseDetailViewState extends State<CourseDetailView> {
                   child: Column(
                     crossAxisAlignment: .start,
                     children: [
-                      if (course.image != null || course.image != '')
-                        Container(
-                          width: .infinity,
-                          height: 150.h,
-                          margin: .symmetric(horizontal: 15.w, vertical: 10.h),
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(course.image ?? AssetsManager.sqlCourseImage),
-                              fit: .fill,
+                      course.image != null && course.image!.isEmpty
+                          ? Container(
+                              width: .infinity,
+                              height: 150.h,
+                              margin: .symmetric(
+                                horizontal: 15.w,
+                                vertical: 10.h,
+                              ),
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    AssetsManager.placeHolderImage,
+                                  ),
+                                  fit: .fill,
+                                ),
+                                borderRadius: .circular(16.r),
+                              ),
+                            )
+                          : Container(
+                              width: .infinity,
+                              height: 150.h,
+                              margin: .symmetric(
+                                horizontal: 15.w,
+                                vertical: 10.h,
+                              ),
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: NetworkImage(course.image!),
+                                  fit: .fill,
+                                ),
+                                borderRadius: .circular(16.r),
+                              ),
                             ),
-                            borderRadius: .circular(16.r),
-                          ),
-                        ),
                       Text(course.title, style: Styles.textStyleBlue500M14),
                       SizedBox(height: 15.h),
                       Row(
@@ -216,7 +236,6 @@ class _CourseDetailViewState extends State<CourseDetailView> {
                   ),
                 ),
               ),
-
             ],
           ),
         );
