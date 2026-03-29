@@ -26,7 +26,7 @@ class UserCubit extends Cubit<UserState> {
   }
 
   Future<void> initializeCamera() async {
-    _isCameraClosed = false; // ✅ reset
+    _isCameraClosed = false;
 
     emit(CameraLoading());
     try {
@@ -80,10 +80,8 @@ class UserCubit extends Cubit<UserState> {
         ),
       );
 
-      // ✅ Run ML Kit
       final faces = await faceDetector.processImage(inputImage);
 
-      // ✅ Prevent using results after dispose
       if (_isCameraClosed || cameraController == null) return;
 
       final validFaces = faces.where((face) => isValidFace(face)).toList();
@@ -125,12 +123,12 @@ class UserCubit extends Cubit<UserState> {
   }
 
   Future<void> closeCamera() async {
-    _isCameraClosed = true; // ✅ block future processing
+    _isCameraClosed = true;
 
     try {
       if (cameraController != null) {
         if (cameraController!.value.isStreamingImages) {
-          await cameraController!.stopImageStream(); // ✅ MUST
+          await cameraController!.stopImageStream();
         }
 
         await cameraController!.dispose();
