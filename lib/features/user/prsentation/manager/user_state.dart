@@ -22,6 +22,8 @@ class FaceDetected extends UserState {
   FaceDetected({required this.faces, required this.imageSize});
 }
 
+class StudentIsCheating extends UserState {}
+
 class FaceNotDetected extends UserState {}
 
 class CameraClosed extends UserState {}
@@ -34,4 +36,3 @@ class CameraError extends UserState {
 class RequestedLogOut extends UserState {}
 
 class LogOutSuccess extends UserState {}
-

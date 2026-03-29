@@ -19,19 +19,26 @@ class ExamView extends StatefulWidget {
 }
 
 class _ExamViewState extends State<ExamView> {
+  late UserCubit cubit;
   @override
   void initState() {
     super.initState();
-    final cubit = context.read<UserCubit>();
+    cubit = context.read<UserCubit>();
     cubit.initializeFaceDetector();
     cubit.initializeCamera();
+  }
+
+  @override
+  void dispose() {
+    cubit.closeCamera();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        context.read<UserCubit>().closeCamera();
+        cubit.closeCamera();
         context.pop();
         return true;
       },
@@ -42,14 +49,21 @@ class _ExamViewState extends State<ExamView> {
             title: LocaleKeys.kExam.tr(),
             isHome: false,
             onBackPressed: () {
-              context.read<UserCubit>().closeCamera();
+              cubit.closeCamera();
               context.pop();
             },
           ),
         ),
-        body: BlocBuilder<UserCubit, UserState>(
+        body: BlocConsumer<UserCubit, UserState>(
+          listener: (context, state) {
+            if (state is StudentIsCheating) {
+              debugPrint("Student is cheating");
+              if (context.canPop()) {
+                context.pop();
+              }
+            }
+          },
           builder: (context, state) {
-            final cubit = context.read<UserCubit>();
             if (state is CameraLoading) {
               return const Center(child: CircularProgressIndicator());
             }
@@ -59,12 +73,14 @@ class _ExamViewState extends State<ExamView> {
               return Column(
                 children: [
                   Container(
-                    height: 200.h,
+                    height: 300.h,
                     width: MediaQuery.of(context).size.width * 0.6,
                     child: Stack(
                       fit: StackFit.expand,
                       children: [
-                        CameraPreview(cubit.cameraController!),
+                        if (cubit.cameraController != null &&
+                            cubit.cameraController!.value.isInitialized)
+                          CameraPreview(cubit.cameraController!),
                         if (state
                             is FaceDetected) // this state only when face is detected to create the rounded box
                           CustomPaint(
