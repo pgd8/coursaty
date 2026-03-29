@@ -48,7 +48,7 @@ class _HomeViewState extends State<HomeView> {
         builder: (context, state) {
           final cubit = context.read<UserCubit>();
           return Drawer(
-            width: Unit(context).getWidthSize * 0.5,
+            width: Unit(context).getWidthSize * 0.7,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 0.1.sh),
               child: Column(
@@ -61,7 +61,7 @@ class _HomeViewState extends State<HomeView> {
                       context.push(Routes.kMyCourses);
                     },
                   ),
-                  SizedBox(height: 10.h),
+                  SizedBox(height: 20.h),
                   DrawerItem(
                     icon: AssetsManager.translationsIcon,
                     title: LocaleKeys.kChangeLanguage.tr(),
@@ -75,7 +75,7 @@ class _HomeViewState extends State<HomeView> {
                       }
                     },
                   ),
-                  SizedBox(height: 10.h),
+                  SizedBox(height: 20.h),
                   DrawerItem(
                     icon: AssetsManager.signOutIcon,
                     title: LocaleKeys.kLogout.tr(),
@@ -107,9 +107,9 @@ class _HomeViewState extends State<HomeView> {
           if (state is HomeLoadingCourses) {
             return const Center(child: CircularProgressIndicator());
           } else if (state is HomeError) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(state.message)),
-            );
+            ScaffoldMessenger.of(
+              context,
+            ).showSnackBar(SnackBar(content: Text(state.message)));
             return SizedBox.shrink();
           } else if (state is HomeCoursesLoaded) {
             final courses = state.courses;
@@ -123,15 +123,21 @@ class _HomeViewState extends State<HomeView> {
             }
 
             int itemCount = courses.length;
-        
-          return Padding(
-            padding: .symmetric(horizontal: 15.r, vertical: 10.r),
-            child: Column(
-              children: [
-                Expanded(child: ListView.separated(itemBuilder: itemBuilder, separatorBuilder: separatorBuilder, itemCount: itemCount))
+
+            return Padding(
+              padding: .symmetric(horizontal: 15.r, vertical: 10.r),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: ListView.separated(
+                      itemBuilder: itemBuilder,
+                      separatorBuilder: separatorBuilder,
+                      itemCount: itemCount,
+                    ),
+                  ),
                 ],
-            ),
-          );
+              ),
+            );
           }
           return const SizedBox();
         },
