@@ -1,5 +1,6 @@
 import 'package:coursaty/Core/Shared_Widgets/app_bar_custom.dart';
 import 'package:coursaty/Core/Shared_Widgets/functions/show_error_dialog.dart';
+import 'package:coursaty/Core/Shared_Widgets/functions/show_success_dialog.dart';
 import 'package:coursaty/Core/Shared_Widgets/main_button_custom.dart';
 import 'package:coursaty/Core/Themes/assets_manager.dart';
 import 'package:coursaty/Core/Themes/color_data.dart';
@@ -49,9 +50,7 @@ class _CourseDetailViewState extends State<CourseDetailView> {
         } else if (state is EnrollCourseError) {
           showErrorDialog(context: context, message: state.message);
         } else if (state is EnrollCourseSuccess) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Course enrolled successfully')),
-          );
+          showSuccessDialog(context: context);
         }
       },
       buildWhen: (previous, current) =>

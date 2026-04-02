@@ -10,7 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
-void showSuccesDialog({required BuildContext context}) {
+void showSuccessDialog({required BuildContext context}) {
   showDialog(
     fullscreenDialog: false,
     context: context,
