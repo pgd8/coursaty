@@ -35,5 +35,6 @@
   "kConfirm": "Confirm",
   "kCancel": "Cancel",
   "kCapacity": "Capacity",
-  "kExamClosedBecauseYouCheated": "The exam was closed because you cheated"
+  "kExamClosedBecauseYouCheated": "The exam was closed because you cheated",
+  "kSuccess": "Success"
 }

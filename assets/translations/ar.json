@@ -35,5 +35,6 @@
   "kConfirm": "تأكيد",
   "kCancel": "إلغاء",
   "kCapacity": "السعة",
-  "kExamClosedBecauseYouCheated": "تم إغلاق الامتحان بسبب الغش"
+  "kExamClosedBecauseYouCheated": "تم إغلاق الامتحان بسبب الغش",
+  "kSuccess": "تم بنجاح"
 }

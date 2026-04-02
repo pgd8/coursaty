@@ -27,6 +27,7 @@ abstract class LocaleKeys {
   static const String kCapacity = 'kCapacity';
   static const String kExamClosedBecauseYouCheated =
       'kExamClosedBecauseYouCheated';
+  static const String kSuccess = 'kSuccess';
 
   //validations
   static const String kNameRequired = 'kNameRequired';
