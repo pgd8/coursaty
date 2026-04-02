@@ -34,5 +34,6 @@
   "kAreYouSureYouWantToLogout": "Are you sure you want to logout?",
   "kConfirm": "Confirm",
   "kCancel": "Cancel",
-  "kCapacity": "Capacity"
+  "kCapacity": "Capacity",
+  "kExamClosedBecauseYouCheated": "The exam was closed because you cheated"
 }

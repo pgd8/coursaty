@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:camera/camera.dart';
 import 'package:coursaty/Core/Constants/constants.dart';
+import 'package:coursaty/features/user/domain/repos/user_repo.dart';
 import 'package:coursaty/features/user/prsentation/manager/user_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,11 +9,14 @@ import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserCubit extends Cubit<UserState> {
-  UserCubit() : super(CameraInitial());
+  final UserRepo userRepo;
+  UserCubit(this.userRepo) : super(CameraInitial());
   CameraController? cameraController;
   late FaceDetector faceDetector;
   bool _isProcessing = false;
   bool _isCameraClosed = false;
+  Timer? _cheatingTimer;
+
   void initializeFaceDetector() {
     faceDetector = FaceDetector(
       options: FaceDetectorOptions(
@@ -113,17 +117,24 @@ class UserCubit extends Cubit<UserState> {
         (face.leftEyeOpenProbability ?? 0) > 0.1 &&
         (face.rightEyeOpenProbability ?? 0) > 0.1;
     if (!isFacingForward || !eyesOpen) {
-      Future.delayed(const Duration(seconds: 10), () {
-        emit(StudentIsCheating());
-        emit(CameraClosed());
-        closeCamera();
-      });
+      if (_cheatingTimer == null || !_cheatingTimer!.isActive) {
+        _cheatingTimer = Timer(const Duration(seconds: 6), () {
+          if (!_isCameraClosed) {
+            emit(StudentIsCheating());
+            emit(CameraClosed());
+            closeCamera();
+          }
+        });
+      }
+    } else {
+      _cheatingTimer?.cancel();
     }
     return isFacingForward && eyesOpen;
   }
 
   Future<void> closeCamera() async {
     _isCameraClosed = true;
+    _cheatingTimer?.cancel();
 
     try {
       if (cameraController != null) {
@@ -148,5 +159,25 @@ class UserCubit extends Cubit<UserState> {
     final prefs = await SharedPreferences.getInstance();
     prefs.remove(Constants.kToken);
     emit(LogOutSuccess());
+  }
+
+  void markAsCheating({
+    required String courseId,
+    required String studentId,
+  }) async {
+    emit(MarkAsCheatingLoading());
+    final token = await SharedPreferences.getInstance().then(
+      (value) => value.getString(Constants.kToken),
+    );
+    try {
+      await userRepo.markAsCheating(
+        token: token!,
+        courseId: courseId,
+        studentId: studentId,
+      );
+      emit(MarkAsCheatingSuccess());
+    } catch (e) {
+      emit(MarkAsCheatingError(e.toString()));
+    }
   }
 }

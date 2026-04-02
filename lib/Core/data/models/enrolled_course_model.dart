@@ -4,7 +4,7 @@ class EnrolledCourseModel {
   final CourseModel courseModel;
   final String id;
   final String studentId;
-  double? grade;
+  int? grade;
   String status;
 
   EnrolledCourseModel({

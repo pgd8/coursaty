@@ -11,8 +11,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../Core/Shared_Widgets/functions/show_cheating_dialog.dart';
+
 class ExamView extends StatefulWidget {
-  const ExamView({super.key});
+  const ExamView({super.key, required this.courseId, required this.studentId});
+  final String courseId;
+  final String studentId;
 
   @override
   State<ExamView> createState() => _ExamViewState();
@@ -58,9 +62,11 @@ class _ExamViewState extends State<ExamView> {
           listener: (context, state) {
             if (state is StudentIsCheating) {
               debugPrint("Student is cheating");
-              if (context.canPop()) {
-                context.pop();
-              }
+              showCheatingDialog(
+                context: context,
+                courseId: widget.courseId,
+                studentId: widget.studentId,
+              );
             }
           },
           builder: (context, state) {

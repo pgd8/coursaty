@@ -1,4 +1,3 @@
-
 import 'package:coursaty/Core/Routing/routes.dart';
 import 'package:coursaty/Core/Shared_Widgets/main_button_custom.dart';
 import 'package:coursaty/Core/Themes/assets_manager.dart';
@@ -15,13 +14,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
-showLogoutDialog({required BuildContext context}){
+void showLogoutDialog({required BuildContext context}) {
   showDialog(
     fullscreenDialog: false,
     context: context,
-    builder: (context) => BlocListener<UserCubit,UserState>(
+    builder: (context) => BlocListener<UserCubit, UserState>(
       listener: (context, state) {
-        if(state is LogOutSuccess){
+        if (state is LogOutSuccess) {
           context.pop();
           context.go(Routes.kLogin);
         }
@@ -40,43 +39,48 @@ showLogoutDialog({required BuildContext context}){
             children: [
               Container(
                 alignment: .topRight,
-                child: CloseButton(onPressed: context.pop,),
+                child: CloseButton(onPressed: context.pop),
               ),
               Lottie.asset(
-                  AssetsManager.exitLottie,
-                  width: 200.w,
-                  height:150.h
+                AssetsManager.exitLottie,
+                width: 200.w,
+                height: 150.h,
               ),
               SizedBox(height: 10.h),
-              Text(LocaleKeys.kAreYouSureYouWantToLogout.tr(),
+              Text(
+                LocaleKeys.kAreYouSureYouWantToLogout.tr(),
                 style: Styles.textStyleGray600M14,
-                textAlign: .center,),
+                textAlign: .center,
+              ),
               SizedBox(height: 10.h),
               Row(
                 mainAxisAlignment: .spaceBetween,
                 children: [
                   Expanded(
-                      child: MainButtonCustom(
-                        text: LocaleKeys.kConfirm.tr(),
-                        color: ColorData.danger500Color,
-                        onTap: (){
-                          context.read<UserCubit>().logOut();
-                        },
-                      )),
+                    child: MainButtonCustom(
+                      text: LocaleKeys.kConfirm.tr(),
+                      color: ColorData.danger500Color,
+                      onTap: () {
+                        context.read<UserCubit>().logOut();
+                      },
+                    ),
+                  ),
                   SizedBox(width: 10.w),
                   Expanded(
-                      child: MainButtonCustom(
-                        text: LocaleKeys.kCancel.tr(),
-                        color: ColorData.primary500Color,
-                        onTap: (){
-                          context.pop();
-                        },
-                      )),
+                    child: MainButtonCustom(
+                      text: LocaleKeys.kCancel.tr(),
+                      color: ColorData.primary500Color,
+                      onTap: () {
+                        context.pop();
+                      },
+                    ),
+                  ),
                 ],
-              )
+              ),
             ],
           ),
         ),
       ),
-    ),);
+    ),
+  );
 }

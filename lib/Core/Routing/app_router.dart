@@ -62,7 +62,13 @@ class AppRouter {
       },
     ),
 
-    GoRoute(path: Routes.kExamView, builder: (context, state) => ExamView()),
+    GoRoute(
+      path: Routes.kExamView,
+      builder: (context, state) {
+        Map<String, String> ex = state.extra as Map<String, String>;
+        return ExamView(courseId: ex['courseId']!, studentId: ex['studentId']!);
+      },
+    ),
   ];
 
   static GoRouter router = GoRouter(

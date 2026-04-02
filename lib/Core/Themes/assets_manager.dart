@@ -6,7 +6,8 @@ class AssetsManager {
   //Lottie
   static const String errorLottie = '${lottiePath}error_lottie.json';
   static const String exitLottie = '${lottiePath}exit_lottie.json';
-
+  static const String successLottie = '${lottiePath}success_lottie.json';
+  static const String cheatedLottie = '${lottiePath}cheated_lottie.json';
   //images
   static const String appLogo = '${imagePath}app_logo.png';
   static const String flutterCourse = '${imagePath}flutter_course.jpg';

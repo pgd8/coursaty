@@ -36,3 +36,12 @@ class CameraError extends UserState {
 class RequestedLogOut extends UserState {}
 
 class LogOutSuccess extends UserState {}
+
+class MarkAsCheatingLoading extends UserState {}
+
+class MarkAsCheatingSuccess extends UserState {}
+
+class MarkAsCheatingError extends UserState {
+  final String message;
+  MarkAsCheatingError(this.message);
+}

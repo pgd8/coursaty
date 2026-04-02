@@ -30,9 +30,10 @@
   "kInvalidEmail": "البريد الإلكتروني غير صالح",
   "kChangeLanguage": "تغيير اللغة",
   "kExam": "الاختبار",
-  "kLogout" : "تسجيل خروج",
+  "kLogout": "تسجيل خروج",
   "kAreYouSureYouWantToLogout": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
   "kConfirm": "تأكيد",
   "kCancel": "إلغاء",
-  "kCapacity": "السعة"
+  "kCapacity": "السعة",
+  "kExamClosedBecauseYouCheated": "تم إغلاق الامتحان بسبب الغش"
 }

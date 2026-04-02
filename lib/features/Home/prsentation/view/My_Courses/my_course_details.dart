@@ -195,7 +195,13 @@ class _MyCourseDetailsState extends State<MyCourseDetails> {
                       text: LocaleKeys.kAttemptExam.tr(),
                       width: Unit(context).getWidthSize * 0.6,
                       onTap: () {
-                        context.push(Routes.kExamView);
+                        context.push(
+                          Routes.kExamView,
+                          extra: {
+                            'courseId': course.courseModel.id,
+                            'studentId': course.studentId,
+                          },
+                        );
                       },
                     ),
                   ),
