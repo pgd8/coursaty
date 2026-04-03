@@ -180,4 +180,47 @@ class UserCubit extends Cubit<UserState> {
       emit(MarkAsCheatingError(e.toString()));
     }
   }
+
+  void getGrades() async {
+    emit(GetGradesLoading());
+    try {
+      final token = await SharedPreferences.getInstance().then(
+        (value) => value.getString(Constants.kToken),
+      );
+      final grades = await userRepo.getGrades(token: token!);
+      emit(GetGradesSuccess(grades));
+    } catch (e) {
+      emit(GetGradesError(e.toString()));
+    }
+  }
+
+  int getScore({
+    required List<int?> selectedAnswers,
+    required List<int> correctAnswers,
+  }) {
+    int score = 0;
+    for (int i = 0; i < selectedAnswers.length; i++) {
+      if (selectedAnswers[i] == correctAnswers[i]) {
+        score += 20;
+      }
+    }
+    return score;
+  }
+
+  void setGrade({required String enrollmentId, required int grade}) async {
+    emit(SetGradeLoading());
+    try {
+      final token = await SharedPreferences.getInstance().then(
+        (value) => value.getString(Constants.kToken),
+      );
+      await userRepo.setGrade(
+        token: token!,
+        enrollmentId: enrollmentId,
+        grade: grade,
+      );
+      emit(SetGradeSuccess());
+    } catch (e) {
+      emit(SetGradeError(e.toString()));
+    }
+  }
 }

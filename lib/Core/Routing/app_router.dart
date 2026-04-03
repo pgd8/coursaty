@@ -1,9 +1,9 @@
 import 'package:coursaty/Core/Routing/routes.dart';
+import 'package:coursaty/features/Grades/presentaion/view/grades_view.dart';
 import 'package:coursaty/features/Home/prsentation/view/home_view.dart';
 import 'package:coursaty/features/Login/presentaion/view/login_view.dart';
 import 'package:coursaty/features/Home/prsentation/view/My_Courses/my_course_details.dart';
 import 'package:coursaty/features/Home/prsentation/view/My_Courses/my_course_view.dart';
-import 'package:coursaty/features/Notifications/presentaion/view/notification_view.dart';
 import 'package:coursaty/features/On_Boarding/onboard_view.dart';
 import 'package:coursaty/features/Sign_Up/presentaion/view/signup_view.dart';
 import 'package:coursaty/features/Splash_Screen/splash_screen.dart';
@@ -35,10 +35,10 @@ class AppRouter {
 
     //home view
     GoRoute(path: Routes.kHome, builder: (context, state) => HomeView()),
-    //notifications view
+    //grades view
     GoRoute(
-      path: Routes.kNotificationsView,
-      builder: (context, state) => NotificationView(),
+      path: Routes.kGradesView,
+      builder: (context, state) => GradesView(),
     ),
     //courses View
     GoRoute(

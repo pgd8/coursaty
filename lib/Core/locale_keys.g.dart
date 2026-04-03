@@ -42,4 +42,40 @@ abstract class LocaleKeys {
   static const String kPasswordsDoNotMatch = 'kPasswordsDoNotMatch';
   static const String kEmailRequired = 'kEmailRequired';
   static const String kInvalidEmail = 'kInvalidEmail';
+
+  //exam
+  static const String kQuestionOne = 'kQuestionOne';
+  static const String kQuestionTwo = 'kQuestionTwo';
+  static const String kQuestionThree = 'kQuestionThree';
+  static const String kQuestionFour = 'kQuestionFour';
+  static const String kQuestionFive = 'kQuestionFive';
+  static const String kQ1Option1 = 'kQ1Option1';
+  static const String kQ1Option2 = 'kQ1Option2';
+  static const String kQ1Option3 = 'kQ1Option3';
+  static const String kQ1Option4 = 'kQ1Option4';
+  static const String kQ2Option1 = 'kQ2Option1';
+  static const String kQ2Option2 = 'kQ2Option2';
+  static const String kQ2Option3 = 'kQ2Option3';
+  static const String kQ2Option4 = 'kQ2Option4';
+  static const String kQ3Option1 = 'kQ3Option1';
+  static const String kQ3Option2 = 'kQ3Option2';
+  static const String kQ3Option3 = 'kQ3Option3';
+  static const String kQ3Option4 = 'kQ3Option4';
+  static const String kQ4Option1 = 'kQ4Option1';
+  static const String kQ4Option2 = 'kQ4Option2';
+  static const String kQ4Option3 = 'kQ4Option3';
+  static const String kQ4Option4 = 'kQ4Option4';
+  static const String kQ5Option1 = 'kQ5Option1';
+  static const String kQ5Option2 = 'kQ5Option2';
+  static const String kQ5Option3 = 'kQ5Option3';
+  static const String kQ5Option4 = 'kQ5Option4';
+
+  //grades
+  static const String kGrades = 'kGrades';
+  static const String kGrade = 'kGrade';
+  static const String kCourse = 'kCourse';
+  static const String kYouHaveNotTakenAnyExamsYet =
+      'kYouHaveNotTakenAnyExamsYet';
+  static const String kCheated = 'kCheated';
+  static const String kSubmit = 'kSubmit';
 }

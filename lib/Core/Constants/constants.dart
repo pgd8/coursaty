@@ -1,10 +1,11 @@
+import 'package:coursaty/Core/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../Themes/color_data.dart';
 
 class Constants {
-
   static const String kToken = 'kToken';
 
   static double kToolBarHeight = 56.0;
@@ -25,7 +26,7 @@ class Constants {
     ),
   ];
 
-  static  List<BoxShadow> bottomNavBarShadow = [
+  static List<BoxShadow> bottomNavBarShadow = [
     BoxShadow(
       color: ColorData.bottomNavBarShadow1Color,
       spreadRadius: -8.r,
@@ -58,4 +59,45 @@ class Constants {
     color: ColorData.whiteColor,
     boxShadow: boxShadow2,
   );
+
+  static List<String> questions = [
+    LocaleKeys.kQuestionOne.tr(),
+    LocaleKeys.kQuestionTwo.tr(),
+    LocaleKeys.kQuestionThree.tr(),
+    LocaleKeys.kQuestionFour.tr(),
+    LocaleKeys.kQuestionFive.tr(),
+  ];
+
+  static List<List<String>> answers = [
+    [
+      LocaleKeys.kQ1Option1.tr(),
+      LocaleKeys.kQ1Option2.tr(),
+      LocaleKeys.kQ1Option3.tr(),
+      LocaleKeys.kQ1Option4.tr(),
+    ],
+    [
+      LocaleKeys.kQ2Option1.tr(),
+      LocaleKeys.kQ2Option2.tr(),
+      LocaleKeys.kQ2Option3.tr(),
+      LocaleKeys.kQ2Option4.tr(),
+    ],
+    [
+      LocaleKeys.kQ3Option1.tr(),
+      LocaleKeys.kQ3Option2.tr(),
+      LocaleKeys.kQ3Option3.tr(),
+      LocaleKeys.kQ3Option4.tr(),
+    ],
+    [
+      LocaleKeys.kQ4Option1.tr(),
+      LocaleKeys.kQ4Option2.tr(),
+      LocaleKeys.kQ4Option3.tr(),
+      LocaleKeys.kQ4Option4.tr(),
+    ],
+    [
+      LocaleKeys.kQ5Option1.tr(),
+      LocaleKeys.kQ5Option2.tr(),
+      LocaleKeys.kQ5Option3.tr(),
+      LocaleKeys.kQ5Option4.tr(),
+    ],
+  ];
 }

@@ -1,7 +1,7 @@
 import 'package:coursaty/Core/Constants/constants.dart';
 import 'package:coursaty/Core/Routing/routes.dart';
 import 'package:coursaty/Core/Shared_Widgets/app_bar_custom.dart';
-import 'package:coursaty/Core/Shared_Widgets/functions/shou_logut_dialog.dart';
+import 'package:coursaty/Core/Shared_Widgets/dialogs/show_logut_dialog.dart';
 import 'package:coursaty/Core/Themes/assets_manager.dart';
 import 'package:coursaty/Core/Themes/unit.dart';
 import 'package:coursaty/Core/locale_keys.g.dart';

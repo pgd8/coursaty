@@ -1,6 +1,6 @@
 import 'package:coursaty/Core/Shared_Widgets/app_bar_custom.dart';
-import 'package:coursaty/Core/Shared_Widgets/functions/show_error_dialog.dart';
-import 'package:coursaty/Core/Shared_Widgets/functions/show_success_dialog.dart';
+import 'package:coursaty/Core/Shared_Widgets/dialogs/show_error_dialog.dart';
+import 'package:coursaty/Core/Shared_Widgets/dialogs/show_success_dialog.dart';
 import 'package:coursaty/Core/Shared_Widgets/main_button_custom.dart';
 import 'package:coursaty/Core/Themes/assets_manager.dart';
 import 'package:coursaty/Core/Themes/color_data.dart';

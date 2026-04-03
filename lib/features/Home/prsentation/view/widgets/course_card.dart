@@ -3,6 +3,8 @@ import 'package:coursaty/Core/Routing/routes.dart';
 import 'package:coursaty/Core/Themes/assets_manager.dart';
 import 'package:coursaty/Core/Themes/style_data.dart';
 import 'package:coursaty/Core/data/models/course_model.dart';
+import 'package:coursaty/Core/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -63,11 +65,13 @@ class CourseCard extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: .spaceBetween,
                 children: [
-                  Text(course.title, style: Styles.textStyleWhiteR14),
+                  Text(course.title, style: Styles.textStyleWhiteR12),
                   Row(
                     children: [
-                      Text('Duration:', style: Styles.textStyleWhiteR14),
-                      SizedBox(width: 2.w),
+                      Text(
+                        LocaleKeys.kDuration.tr(),
+                        style: Styles.textStyleWhiteR12,
+                      ),
                       Text(
                         course.duration.toString(),
                         style: Styles.textStyleWhiteR12,

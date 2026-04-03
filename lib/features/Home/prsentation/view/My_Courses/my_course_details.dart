@@ -198,7 +198,7 @@ class _MyCourseDetailsState extends State<MyCourseDetails> {
                         context.push(
                           Routes.kExamView,
                           extra: {
-                            'courseId': course.courseModel.id,
+                            'courseId': course.id,
                             'studentId': course.studentId,
                           },
                         );

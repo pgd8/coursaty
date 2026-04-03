@@ -68,11 +68,11 @@ class MyCourseCard extends StatelessWidget {
                   children: [
                     Text(
                       course.courseModel.title,
-                      style: Styles.textStyleWhiteR14,
+                      style: Styles.textStyleWhiteR12,
                     ),
                     Row(
                       children: [
-                        Text('Duration:', style: Styles.textStyleWhiteR14),
+                        Text('Duration:', style: Styles.textStyleWhiteR12),
                         SizedBox(width: 2.w),
                         Text(
                           course.courseModel.duration.toString(),

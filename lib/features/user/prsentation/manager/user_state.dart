@@ -1,4 +1,5 @@
 import 'package:camera/camera.dart';
+import 'package:coursaty/Core/data/models/grade_model.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
 import 'package:flutter/material.dart';
 
@@ -44,4 +45,25 @@ class MarkAsCheatingSuccess extends UserState {}
 class MarkAsCheatingError extends UserState {
   final String message;
   MarkAsCheatingError(this.message);
+}
+
+class GetGradesLoading extends UserState {}
+
+class GetGradesSuccess extends UserState {
+  final List<GradeModel> grades;
+  GetGradesSuccess(this.grades);
+}
+
+class GetGradesError extends UserState {
+  final String message;
+  GetGradesError(this.message);
+}
+
+class SetGradeLoading extends UserState {}
+
+class SetGradeSuccess extends UserState {}
+
+class SetGradeError extends UserState {
+  final String message;
+  SetGradeError(this.message);
 }

@@ -1,5 +1,5 @@
 import 'package:coursaty/Core/Routing/routes.dart';
-import 'package:coursaty/Core/Shared_Widgets/functions/show_error_dialog.dart';
+import 'package:coursaty/Core/Shared_Widgets/dialogs/show_error_dialog.dart';
 import 'package:coursaty/Core/Validations/validators.dart';
 import 'package:coursaty/Core/locale_keys.g.dart';
 import 'package:coursaty/Core/Shared_Widgets/main_button_custom.dart';
@@ -66,7 +66,10 @@ class _LoginFormState extends State<LoginForm> {
                   ),
                 ),
                 SizedBox(height: 13.h),
-                Text(LocaleKeys.kPassword.tr(), style: Styles.textStyleGray600M18),
+                Text(
+                  LocaleKeys.kPassword.tr(),
+                  style: Styles.textStyleGray600M18,
+                ),
                 TextFormField(
                   obscureText: isHidden,
                   controller: passwordController,
@@ -86,10 +89,10 @@ class _LoginFormState extends State<LoginForm> {
                       },
                       icon: !isHidden
                           ? Icon(
-                        Icons.visibility_rounded,
-                        color: ColorData.primary500Color,
-                        size: 20.r,
-                      )
+                              Icons.visibility_rounded,
+                              color: ColorData.primary500Color,
+                              size: 20.r,
+                            )
                           : Icon(Icons.visibility_off_outlined),
                     ),
                   ),
@@ -101,8 +104,9 @@ class _LoginFormState extends State<LoginForm> {
                   onTap: () {
                     if (formKey.currentState!.validate()) {
                       cubit.login(
-                          email: emailController.text,
-                          password: passwordController.text);
+                        email: emailController.text,
+                        password: passwordController.text,
+                      );
                     }
                   },
                 ),
@@ -112,10 +116,10 @@ class _LoginFormState extends State<LoginForm> {
         );
       },
       listener: (context, state) {
-        if(state is SuccessLoginState){
+        if (state is SuccessLoginState) {
           context.go(Routes.kHome);
         }
-        if(state is ErrorLoginState){
+        if (state is ErrorLoginState) {
           showErrorDialog(context: context, message: state.message);
         }
       },

@@ -19,6 +19,7 @@ void showCheatingDialog({
 }) {
   showDialog(
     fullscreenDialog: false,
+    barrierDismissible: false,
     context: context,
     builder: (context) => Center(
       child: Container(
@@ -32,10 +33,6 @@ void showCheatingDialog({
           mainAxisSize: .min,
           crossAxisAlignment: .center,
           children: [
-            Container(
-              alignment: .topRight,
-              child: CloseButton(onPressed: context.pop),
-            ),
             Lottie.asset(
               AssetsManager.cheatedLottie,
               width: 200.w,
