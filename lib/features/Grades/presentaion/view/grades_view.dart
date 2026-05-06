@@ -52,7 +52,7 @@ class _GradesViewState extends State<GradesView> {
                       borderRadius: .circular(16.r),
                     ),
                     title: Text(
-                      grade.courseModel.title,
+                      grade.courseModel.title ?? '',
                       style: Styles.textStyleWhiteM16,
                     ),
                     subtitle: Row(

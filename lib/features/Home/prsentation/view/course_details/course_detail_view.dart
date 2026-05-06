@@ -119,7 +119,10 @@ class _CourseDetailViewState extends State<CourseDetailView> {
                                 borderRadius: .circular(16.r),
                               ),
                             ),
-                      Text(course.title, style: Styles.textStyleBlue500M14),
+                      Text(
+                        course.title ?? '',
+                        style: Styles.textStyleBlue500M14,
+                      ),
                       SizedBox(height: 15.h),
                       Row(
                         children: [
@@ -213,7 +216,7 @@ class _CourseDetailViewState extends State<CourseDetailView> {
                       ),
                       SizedBox(height: 15.h),
                       Text(
-                        course.description,
+                        course.description ?? '',
                         textAlign: .start,
                         style: Styles.textStyleGray400R12,
                       ),

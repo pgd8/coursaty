@@ -89,7 +89,7 @@ class _MyCourseDetailsState extends State<MyCourseDetails> {
                         ),
                   SizedBox(height: 20.h),
                   Text(
-                    course.courseModel.title,
+                    course.courseModel.title ?? '',
                     style: Styles.textStyleBlue500M14,
                   ),
                   SizedBox(height: 15.h),
@@ -185,7 +185,7 @@ class _MyCourseDetailsState extends State<MyCourseDetails> {
                   ),
                   SizedBox(height: 15.h),
                   Text(
-                    course.courseModel.description,
+                    course.courseModel.description ?? '',
                     textAlign: .start,
                     style: Styles.textStyleGray400R12,
                   ),

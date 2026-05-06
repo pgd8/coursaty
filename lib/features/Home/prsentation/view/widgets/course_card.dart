@@ -65,7 +65,7 @@ class CourseCard extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: .spaceBetween,
                 children: [
-                  Text(course.title, style: Styles.textStyleWhiteR12),
+                  Text(course.title ?? '', style: Styles.textStyleWhiteR12),
                   Row(
                     children: [
                       Text(

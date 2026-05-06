@@ -65,7 +65,7 @@ class HomeRepo {
       );
 
       final data = jsonDecode(response.body);
-      if (response.statusCode == 200 || response.statusCode == 201) {
+      if (response.statusCode >= 200 && response.statusCode < 300) {
         debugPrint('Course enrolled successfully: $data');
         return CourseModel.fromJson(data);
       } else if (response.statusCode == 409) {
@@ -74,7 +74,7 @@ class HomeRepo {
         throw Exception('Failed to enroll course');
       }
     } catch (e) {
-      throw Exception('Failed to enroll course');
+      throw Exception(e.toString());
     }
   }
 

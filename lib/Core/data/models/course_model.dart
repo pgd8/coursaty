@@ -1,33 +1,33 @@
 class CourseModel {
   String id;
   String? image;
-  String title;
-  int cost;
-  int duration;
-  String description;
-  bool isActive;
-  int capacity;
+  String? title;
+  int? cost;
+  int? duration;
+  String? description;
+  bool? isActive;
+  int? capacity;
 
   CourseModel({
     required this.id,
-    required this.title,
+    this.title,
     this.image,
-    required this.duration,
-    required this.description,
-    required this.cost,
-    required this.isActive,
-    required this.capacity,
+    this.duration,
+    this.description,
+    this.cost,
+    this.isActive,
+    this.capacity,
   });
 
   CourseModel.fromJson(Map<String, dynamic> json)
     : this(
         id: json['_id'],
-        title: json['title'],
-        image: json['imageUrl'],
-        duration: json['duration'],
-        description: json['description'],
-        cost: json['cost'],
-        isActive: json['active'],
-        capacity: json['capacity'],
+        title: json['title'] ?? '',
+        image: json['imageUrl'] ?? '',
+        duration: json['duration'] ?? 0,
+        description: json['description'] ?? '',
+        cost: json['cost'] ?? 0,
+        isActive: json['active'] ?? false,
+        capacity: json['capacity'] ?? 0,
       );
 }
