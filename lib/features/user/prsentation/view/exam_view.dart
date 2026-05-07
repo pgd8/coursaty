@@ -21,7 +21,7 @@ class ExamView extends StatefulWidget {
   State<ExamView> createState() => _ExamViewState();
 }
 
-class _ExamViewState extends State<ExamView> {
+class _ExamViewState extends State<ExamView> with WidgetsBindingObserver {
   late UserCubit cubit;
 
   List<int?> selectedAnswers = List.filled(5, null);
@@ -32,6 +32,9 @@ class _ExamViewState extends State<ExamView> {
   @override
   void initState() {
     super.initState();
+
+    WidgetsBinding.instance.addObserver(this);
+
     cubit = context.read<UserCubit>();
     cubit.initializeFaceDetector();
     cubit.initializeCamera();
@@ -39,11 +42,20 @@ class _ExamViewState extends State<ExamView> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+
     cubit.closeCamera();
     super.dispose();
   }
 
-  // Score calculation
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    final isCheating = cubit.handleAppExit(state);
+
+    if (isCheating) {
+      debugPrint("Student exited the app");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

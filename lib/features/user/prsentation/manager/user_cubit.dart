@@ -223,4 +223,21 @@ class UserCubit extends Cubit<UserState> {
       emit(SetGradeError(e.toString()));
     }
   }
+
+  bool handleAppExit(AppLifecycleState state) {
+    final didExit =
+        state == AppLifecycleState.paused ||
+        state == AppLifecycleState.detached;
+
+    if (didExit || !_isCameraClosed) {
+      emit(StudentIsCheating());
+      emit(CameraClosed());
+
+      closeCamera();
+
+      return true;
+    }
+
+    return false;
+  }
 }
