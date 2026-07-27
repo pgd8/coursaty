@@ -1,14 +1,14 @@
-import 'package:coursaty/Core/Routing/routes.dart';
-import 'package:coursaty/features/Grades/presentaion/view/grades_view.dart';
-import 'package:coursaty/features/Home/prsentation/view/home_view.dart';
-import 'package:coursaty/features/Login/presentaion/view/login_view.dart';
-import 'package:coursaty/features/Home/prsentation/view/My_Courses/my_course_details.dart';
-import 'package:coursaty/features/Home/prsentation/view/My_Courses/my_course_view.dart';
-import 'package:coursaty/features/On_Boarding/onboard_view.dart';
-import 'package:coursaty/features/Sign_Up/presentaion/view/signup_view.dart';
-import 'package:coursaty/features/Splash_Screen/splash_screen.dart';
-import 'package:coursaty/features/Home/prsentation/view/course_details/course_detail_view.dart';
-import 'package:coursaty/features/user/prsentation/view/exam_view.dart';
+import 'package:acoursa/Core/Routing/routes.dart';
+import 'package:acoursa/features/Grades/presentaion/view/grades_view.dart';
+import 'package:acoursa/features/Home/prsentation/view/home_view.dart';
+import 'package:acoursa/features/Login/presentaion/view/login_view.dart';
+import 'package:acoursa/features/Home/prsentation/view/My_Courses/my_course_details.dart';
+import 'package:acoursa/features/Home/prsentation/view/My_Courses/my_course_view.dart';
+import 'package:acoursa/features/On_Boarding/onboard_view.dart';
+import 'package:acoursa/features/Sign_Up/presentaion/view/signup_view.dart';
+import 'package:acoursa/features/Splash_Screen/splash_screen.dart';
+import 'package:acoursa/features/Home/prsentation/view/course_details/course_detail_view.dart';
+import 'package:acoursa/features/user/prsentation/view/exam_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

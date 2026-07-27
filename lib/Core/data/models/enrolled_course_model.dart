@@ -1,4 +1,4 @@
-import 'package:coursaty/Core/data/models/course_model.dart';
+import 'package:acoursa/Core/data/models/course_model.dart';
 
 class EnrolledCourseModel {
   final CourseModel courseModel;

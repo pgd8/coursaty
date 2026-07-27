@@ -1,9 +1,9 @@
-import 'package:coursaty/Core/Constants/constants.dart';
-import 'package:coursaty/Core/Routing/routes.dart';
-import 'package:coursaty/Core/Themes/assets_manager.dart';
-import 'package:coursaty/Core/Themes/color_data.dart';
-import 'package:coursaty/Core/Themes/style_data.dart';
-import 'package:coursaty/Core/data/models/enrolled_course_model.dart';
+import 'package:acoursa/Core/Constants/constants.dart';
+import 'package:acoursa/Core/Routing/routes.dart';
+import 'package:acoursa/Core/Themes/assets_manager.dart';
+import 'package:acoursa/Core/Themes/color_data.dart';
+import 'package:acoursa/Core/Themes/style_data.dart';
+import 'package:acoursa/Core/data/models/enrolled_course_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';

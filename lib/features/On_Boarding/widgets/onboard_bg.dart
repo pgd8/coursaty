@@ -1,4 +1,4 @@
-import 'package:coursaty/Core/Themes/unit.dart';
+import 'package:acoursa/Core/Themes/unit.dart';
 import 'package:flutter/material.dart';
 
 class OnboardBg extends StatelessWidget {

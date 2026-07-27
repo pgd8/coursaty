@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:coursaty/Core/API/constant_api.dart';
-import 'package:coursaty/Core/Constants/constants.dart';
-import 'package:coursaty/Core/data/models/course_model.dart';
-import 'package:coursaty/Core/data/models/enrolled_course_model.dart';
+import 'package:acoursa/Core/API/constant_api.dart';
+import 'package:acoursa/Core/Constants/constants.dart';
+import 'package:acoursa/Core/data/models/course_model.dart';
+import 'package:acoursa/Core/data/models/enrolled_course_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';

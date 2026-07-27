@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:coursaty/Core/API/constant_api.dart';
-import 'package:coursaty/Core/data/models/grade_model.dart';
+import 'package:acoursa/Core/API/constant_api.dart';
+import 'package:acoursa/Core/data/models/grade_model.dart';
 import 'package:http/http.dart' as http;
 
 class UserRepo {

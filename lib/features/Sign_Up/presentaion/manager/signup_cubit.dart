@@ -1,5 +1,5 @@
-import 'package:coursaty/features/Sign_Up/domain/signup_repo.dart';
-import 'package:coursaty/features/Sign_Up/presentaion/manager/signup_state.dart';
+import 'package:acoursa/features/Sign_Up/domain/signup_repo.dart';
+import 'package:acoursa/features/Sign_Up/presentaion/manager/signup_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
