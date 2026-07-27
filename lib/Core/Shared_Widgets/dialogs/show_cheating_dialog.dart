@@ -1,10 +1,10 @@
-import 'package:coursaty/Core/Shared_Widgets/main_button_custom.dart';
-import 'package:coursaty/Core/Themes/assets_manager.dart';
-import 'package:coursaty/Core/Themes/color_data.dart';
-import 'package:coursaty/Core/Themes/style_data.dart';
-import 'package:coursaty/Core/Themes/unit.dart';
-import 'package:coursaty/Core/locale_keys.g.dart';
-import 'package:coursaty/features/user/prsentation/manager/user_cubit.dart';
+import 'package:acoursa/Core/Shared_Widgets/main_button_custom.dart';
+import 'package:acoursa/Core/Themes/assets_manager.dart';
+import 'package:acoursa/Core/Themes/color_data.dart';
+import 'package:acoursa/Core/Themes/style_data.dart';
+import 'package:acoursa/Core/Themes/unit.dart';
+import 'package:acoursa/Core/locale_keys.g.dart';
+import 'package:acoursa/features/user/prsentation/manager/user_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

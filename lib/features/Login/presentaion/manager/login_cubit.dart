@@ -1,5 +1,5 @@
-import 'package:coursaty/features/Login/domain/login_repo.dart';
-import 'package:coursaty/features/Login/presentaion/manager/login_state.dart';
+import 'package:acoursa/features/Login/domain/login_repo.dart';
+import 'package:acoursa/features/Login/presentaion/manager/login_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginCubit extends Cubit<LoginState> {

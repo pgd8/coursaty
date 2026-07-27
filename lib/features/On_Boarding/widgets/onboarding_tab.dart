@@ -1,5 +1,5 @@
-import 'package:coursaty/Core/Themes/style_data.dart';
-import 'package:coursaty/features/On_Boarding/widgets/onboard_bg.dart';
+import 'package:acoursa/Core/Themes/style_data.dart';
+import 'package:acoursa/features/On_Boarding/widgets/onboard_bg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

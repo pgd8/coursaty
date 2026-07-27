@@ -1,4 +1,4 @@
-import 'package:coursaty/Core/Routing/routes.dart';
+import 'package:acoursa/Core/Routing/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

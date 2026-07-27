@@ -1,5 +1,5 @@
-import 'package:coursaty/Core/Themes/color_data.dart';
-import 'package:coursaty/Core/Themes/style_data.dart';
+import 'package:acoursa/Core/Themes/color_data.dart';
+import 'package:acoursa/Core/Themes/style_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';

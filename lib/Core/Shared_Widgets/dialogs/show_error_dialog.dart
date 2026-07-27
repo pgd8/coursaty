@@ -1,8 +1,8 @@
 
-import 'package:coursaty/Core/Themes/assets_manager.dart';
-import 'package:coursaty/Core/Themes/color_data.dart';
-import 'package:coursaty/Core/Themes/style_data.dart';
-import 'package:coursaty/Core/Themes/unit.dart';
+import 'package:acoursa/Core/Themes/assets_manager.dart';
+import 'package:acoursa/Core/Themes/color_data.dart';
+import 'package:acoursa/Core/Themes/style_data.dart';
+import 'package:acoursa/Core/Themes/unit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';

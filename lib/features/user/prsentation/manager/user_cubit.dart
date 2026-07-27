@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:camera/camera.dart';
-import 'package:coursaty/Core/Constants/constants.dart';
-import 'package:coursaty/features/user/domain/repos/user_repo.dart';
-import 'package:coursaty/features/user/prsentation/manager/user_state.dart';
+import 'package:acoursa/Core/Constants/constants.dart';
+import 'package:acoursa/features/user/domain/repos/user_repo.dart';
+import 'package:acoursa/features/user/prsentation/manager/user_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
