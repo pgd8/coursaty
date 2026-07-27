@@ -58,6 +58,7 @@ lib/
 │   ├── profile/
 │   └── results/
 │
+├── acoursa_app.dart
 └── main.dart
 ```
 
@@ -131,13 +132,13 @@ Some of the main packages used in the project:
 ### Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/proctor-ai-flutter.git
+git clone https://github.com/pgd8/acoursa.git
 ```
 
 ### Navigate to the project
 
 ```bash
-cd proctor-ai-flutter
+cd acoursa
 ```
 
 ### Install dependencies

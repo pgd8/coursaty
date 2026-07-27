@@ -14,8 +14,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'features/Login/presentaion/manager/login_cubit.dart';
 import 'features/Sign_Up/domain/signup_repo.dart';
 
-class CoursatyApp extends StatelessWidget {
-  const CoursatyApp({super.key});
+class AcoursaApp extends StatelessWidget {
+  const AcoursaApp({super.key});
 
   @override
   Widget build(BuildContext context) {
