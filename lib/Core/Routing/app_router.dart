@@ -1,13 +1,14 @@
-import 'package:coursaty/Core/data/models/course_model.dart';
-import 'package:coursaty/core/routing/routes.dart';
-import 'package:coursaty/features/Home/home_view.dart';
+import 'package:coursaty/Core/Routing/routes.dart';
+import 'package:coursaty/features/Grades/presentaion/view/grades_view.dart';
+import 'package:coursaty/features/Home/prsentation/view/home_view.dart';
 import 'package:coursaty/features/Login/presentaion/view/login_view.dart';
-import 'package:coursaty/features/My_Courses/presentation/my_course_view.dart';
-import 'package:coursaty/features/Notifications/presentaion/view/notification_view.dart';
+import 'package:coursaty/features/Home/prsentation/view/My_Courses/my_course_details.dart';
+import 'package:coursaty/features/Home/prsentation/view/My_Courses/my_course_view.dart';
 import 'package:coursaty/features/On_Boarding/onboard_view.dart';
 import 'package:coursaty/features/Sign_Up/presentaion/view/signup_view.dart';
 import 'package:coursaty/features/Splash_Screen/splash_screen.dart';
-import 'package:coursaty/features/course_details/course_detail_view.dart';
+import 'package:coursaty/features/Home/prsentation/view/course_details/course_detail_view.dart';
+import 'package:coursaty/features/user/prsentation/view/exam_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -27,26 +28,17 @@ class AppRouter {
     ),
 
     //login view
-    GoRoute(
-      path: Routes.kLogin,
-      builder: (context, state) => LoginView(),
-    ),
+    GoRoute(path: Routes.kLogin, builder: (context, state) => LoginView()),
 
     //signup view
-    GoRoute(
-      path: Routes.kSignUp,
-      builder: (context, state) => SignupView(),
-    ),
+    GoRoute(path: Routes.kSignUp, builder: (context, state) => SignupView()),
 
     //home view
+    GoRoute(path: Routes.kHome, builder: (context, state) => HomeView()),
+    //grades view
     GoRoute(
-      path: Routes.kHome,
-      builder: (context, state) => HomeView(),
-    ),
-    //notifications view
-    GoRoute(
-      path: Routes.kNotificationsView,
-      builder: (context, state) => NotificationView(),
+      path: Routes.kGradesView,
+      builder: (context, state) => GradesView(),
     ),
     //courses View
     GoRoute(
@@ -57,9 +49,25 @@ class AppRouter {
     GoRoute(
       path: Routes.kCourseDetails,
       builder: (context, state) {
-        Map<String, CourseModel> ex = state.extra as Map<String, CourseModel>;
-        return CourseDetailView(course: ex['course']!,);
-  } ,
+        Map<String, String> ex = state.extra as Map<String, String>;
+        return CourseDetailView(courseId: ex['courseId']!);
+      },
+    ),
+
+    GoRoute(
+      path: Routes.kMyCoursesDetails,
+      builder: (context, state) {
+        Map<String, String> ex = state.extra as Map<String, String>;
+        return MyCourseDetails(courseId: ex['courseId']!);
+      },
+    ),
+
+    GoRoute(
+      path: Routes.kExamView,
+      builder: (context, state) {
+        Map<String, String> ex = state.extra as Map<String, String>;
+        return ExamView(courseId: ex['courseId']!, studentId: ex['studentId']!);
+      },
     ),
   ];
 

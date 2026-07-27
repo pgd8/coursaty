@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
-
 import '../Themes/assets_manager.dart';
 import '../Themes/color_data.dart';
 
@@ -42,7 +41,7 @@ class AppBarCustom extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          color:  ColorData.blackColor,
+          color: ColorData.blackColor,
           borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(16.r),
             bottomLeft: Radius.circular(16.r),
@@ -55,92 +54,98 @@ class AppBarCustom extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16.h),
             child: isHome
                 ? Row(
-              children: [
-                if (showDrawerIcon)
-                  circularAppBarButtonCustom(
-                    child: SvgPicture.asset(
-                      AssetsManager.menuIcon,
-                      height: 20.sp,
-                    ),
-                    onPressed: menuButtonOnPressed ?? () {},
+                    children: [
+                      if (showDrawerIcon)
+                        circularAppBarButtonCustom(
+                          child: SvgPicture.asset(
+                            AssetsManager.menuIcon,
+                            height: 20.sp,
+                          ),
+                          onPressed: menuButtonOnPressed ?? () {},
+                        )
+                      else
+                        SizedBox(width: 8.w),
+                      SizedBox(width: 10.w),
+                      if (showNotificationIcon)
+                        circularAppBarButtonCustom(
+                          child: SvgPicture.asset(
+                            AssetsManager.gradeIcon,
+                            height: 20.sp,
+                            colorFilter: ColorFilter.mode(
+                              ColorData.whiteColor,
+                              .srcIn,
+                            ),
+                          ),
+                          onPressed: () {
+                            context.push(Routes.kGradesView);
+                          },
+                        )
+                      else
+                        const SizedBox.shrink(),
+                      const Spacer(),
+                      if (titleNotLogo)
+                        Text(
+                          title ?? '',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        )
+                      else
+                        Image.asset(
+                          AssetsManager.appLogo,
+                          width: 50.w,
+                          height: 50.h,
+                        ),
+                    ],
                   )
-                else
-                  SizedBox(width: 8.w),
-                SizedBox(width: 10.w),
-                if (showNotificationIcon)
-                  circularAppBarButtonCustom(
-                    child: SvgPicture.asset(
-                      AssetsManager.notificationIcon,
-                      height: 20.sp,
-                    ),
-                    onPressed: ()  {
-                      context.push(Routes.kNotificationsView);
-                    },
-                  )
-                else
-                  const SizedBox.shrink(),
-                const Spacer(),
-                if (titleNotLogo)
-                  Text(
-                    title ?? '',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  )
-                else
-                  Image.asset(
-                    AssetsManager.appLogo,
-                    width: 50.w,
-                    height: 50.h,
-                  ),
-              ],
-            )
                 : isTrailingIcon
                 ? Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  onPressed: onBackPressed ?? () => Navigator.pop(context),
-                  icon: Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                    size: 20.sp,
-                  ),
-                ),
-                Text(
-                  title ?? '',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                trailingIcon ?? Container(),
-              ],
-            )
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed:
+                            onBackPressed ?? () => Navigator.pop(context),
+                        icon: Icon(
+                          Icons.arrow_back,
+                          color: Colors.white,
+                          size: 20.sp,
+                        ),
+                      ),
+                      Text(
+                        title ?? '',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      trailingIcon ?? Container(),
+                    ],
+                  )
                 : Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  onPressed: onBackPressed ?? () => Navigator.pop(context),
-                  icon: Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                    size: 20.sp,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed:
+                            onBackPressed ?? () => Navigator.pop(context),
+                        icon: Icon(
+                          Icons.arrow_back,
+                          color: Colors.white,
+                          size: 20.sp,
+                        ),
+                      ),
+                      Text(
+                        title ?? '',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                Text(
-                  title ?? '',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
-            ),
           ),
         ),
       ),

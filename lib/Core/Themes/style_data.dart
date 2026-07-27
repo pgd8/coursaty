@@ -1,6 +1,6 @@
-import 'package:coursaty/core/Themes/color_data.dart';
-import 'package:coursaty/core/Themes/font_weight_data.dart';
-import 'package:coursaty/core/Themes/unit.dart';
+import 'package:coursaty/Core/Themes/color_data.dart';
+import 'package:coursaty/Core/Themes/font_weight_data.dart';
+import 'package:coursaty/Core/Themes/unit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -476,6 +476,14 @@ abstract class Styles {
     color: ColorData.warning500Color,
     fontWeight: FontWeightStyles.regular,
     fontSize: 12.sp,
+    height: 0,
+    fontFamily: fontFamily,
+  );
+
+  static TextStyle textStyleWarning500R14 = TextStyle(
+    color: ColorData.warning500Color,
+    fontWeight: FontWeightStyles.regular,
+    fontSize: 14.sp,
     height: 0,
     fontFamily: fontFamily,
   );
